@@ -1,5 +1,126 @@
-/* These styles define the layout of the post (and page) */
+/* Header */
+.i-post-header {
+  position: relative;
+  min-height: 90vh;
+}
 
-.post {
-  margin-block-end: 3rem;
+.i-post-header::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: '';
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+.i-post-header-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.i-post-header-navbar,
+.i-post-header-text,
+.i-post-header-meta {
+  position: relative;
+  z-index: 1;
+  color: var(--white);
+}
+
+.i-post-header-navbar {
+  padding: 1rem;
+}
+
+.i-post-header-text {
+  max-width: 55ch;
+  margin-block-start: 15vh;
+  margin-inline-start: 5rem;
+}
+
+.i-post-header h1 {
+  font-size: var(--h2);
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.i-post-header-meta {
+  float: right;
+  margin-inline-end: 5rem;
+  margin-block-start: 7.5rem;
+  max-width: 55ch;
+  text-align: right;
+}
+
+.i-post-header-meta-author {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.i-post-header-meta-author a {
+  color: var(--white);
+  text-decoration: none;
+}
+
+.i-post-header-meta-date {
+  font-size: var(--small);
+  text-transform: uppercase;
+  margin-block-start: 0;
+}
+
+.i-post-header-share {
+  justify-content: flex-end;
+}
+
+.i-icon {
+  width: 1rem;
+  height: 2rem;
+  line-height: 1;
+  color: var(--primary);
+}
+
+.i-icon:hover {
+  color: var(--secondary);
+}
+
+.i-icon > svg {
+  width: 100%;
+  height: 100%;
+}
+
+.i-copy-button .copied {
+  display: none;
+}
+
+.copied span {
+  display: none;
+}
+
+.copied .copied {
+  display: initial;
+}
+/* Post body */
+.i-post-container-grid {
+  grid-template-columns: var(--gap) [content-start] 1fr [content-end] var(--gap);
+  background-color: var(--surface);
+  color: var(--element);
+  padding-block: 3rem;
+}
+
+.i-post-grid {
+  grid-template-columns: 1fr 1fr [content-start] minmax(0, 640px) [content-end] 1fr 1fr;
+  grid-column: content;
+
+overflow: hidden;
+}
+
+.i-post-grid > * {
+  grid-column: content;
+
 }

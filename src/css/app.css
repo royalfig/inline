@@ -3,6 +3,7 @@
 
 /* Base */
 @import './base/reset.css';
+@import './base/utils.css';
 @import './base/default.css';
 @import './base/typography.css';
 @import './base/grid.css';
@@ -13,9 +14,15 @@
 @import './layout/footer.css';
 
 /* Pages */
+@import './pages/home.css';
 @import './pages/index.css';
 @import './pages/post.css';
 @import './pages/content.css';
+
+/* Components */
+@import './components/card.css';
+@import './components/toc.css';
+
 
 /* Vendor */
 @import './vendors/ghost.css';

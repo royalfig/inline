@@ -1,10 +1,9 @@
 {
-  "name": "ghost-theme-starter",
-  "version": "1.0.1",
-  "description": "A Ghost theme starter",
+  "name": "inline",
+  "version": "1.0.0",
+  "description": "A Ghost theme",
   "engines": {
-    "ghost": ">=4.0.0",
-    "ghost-api": "v4"
+    "ghost": ">=5.0.0"
   },
   "main": "'src/index.js'",
   "scripts": {
@@ -14,7 +13,9 @@
     "build": "NODE_ENV=production rollup -c",
     "zip": "npm run build && node utils/zip",
     "check": "gscan .",
-    "css": "npx stylelint 'src/css/**/*.css' --fix"
+    "css": "npx stylelint 'src/css/**/*.css' --fix",
+    "eslint": "npx eslint 'src/js/**/*.js' --fix",
+    "fix": "npm run css & npm run eslint"
   },
   "keywords": [
     "ghost-theme"
@@ -49,14 +50,94 @@
       "xxl": {
         "width": 2000
       }
+    },
+    "custom": {
+      "search_key": {
+        "type": "text"
+      },
+      "search_url": {
+        "type": "text"
+      },
+      "color_mode": {
+        "type": "select",
+        "options": [
+          "light",
+          "dark"
+        ],
+        "default": "dark"
+      },
+      "syntax_highlighting": {
+        "type": "boolean",
+        "default": false,
+        "group": "post"
+      },
+      "social_media_1": {
+        "type": "select",
+        "options": [
+          "behance",
+          "discord",
+          "dribble",
+          "facebook",
+          "github",
+          "instagram",
+          "linkedin",
+          "mastodon",
+          "patreon",
+          "pinterest",
+          "reddit",
+          "slack",
+          "snapchat",
+          "telegram",
+          "tumblr",
+          "twitch",
+          "twitch",
+          "vimeo",
+          "wechat",
+          "youtube"
+        ],
+        "default": ""
+      },
+      "social_media_2": {
+        "type": "select",
+        "options": [
+          "behance",
+          "discord",
+          "dribble",
+          "facebook",
+          "github",
+          "instagram",
+          "linkedin",
+          "mastodon",
+          "patreon",
+          "pinterest",
+          "reddit",
+          "slack",
+          "snapchat",
+          "telegram",
+          "tumblr",
+          "twitch",
+          "twitch",
+          "vimeo",
+          "wechat",
+          "youtube"
+        ],
+        "default": ""
+      },
+      "social_media_1_url": {
+        "type": "text"
+      },
+      "social_media_2_url": {
+        "type": "text"
+      }
     }
   },
   "devDependencies": {
     "@babel/core": "7.18.9",
     "@babel/preset-env": "7.18.9",
     "@rollup/plugin-babel": "5.3.1",
-    "@rollup/plugin-commonjs": "22.0.1",
+    "@rollup/plugin-commonjs": "^22.0.1",
     "@rollup/plugin-node-resolve": "13.3.0",
+    "@rollup/plugin-replace": "^4.0.0",
     "adm-zip": "0.5.9",
     "cssnano": "5.1.12",
     "eslint": "8.20.0",
@@ -73,5 +154,8 @@
     "rollup-plugin-terser": "7.0.2",
     "stylelint": "14.9.1",
     "stylelint-order": "5.0.0"
+  },
+  "dependencies": {
+    "highlight.js": "^11.6.0"
   }
 }

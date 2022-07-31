@@ -1,0 +1,228 @@
+.home-template {padding: 1rem;}
+.i-home-section {
+  max-width: 85vw;
+  padding: 3rem 2rem;
+  margin-inline: auto;
+}
+
+/* Hero */
+.i-hero {
+  position: relative;
+
+  /* min-height: 80vh; */
+  padding-bottom: 5rem;
+  margin-block-start: 1rem;
+  overflow: hidden;
+  background-color: hsl(var(--primary-h), 30%, 20%);
+}
+
+.i-hero-inner-border {
+  position: relative;
+  height: calc(100% - 2rem);
+  border-color: hsl(var(--complementary-color), 70%, 80%);
+  border-style: solid;
+  border-width: 1rem 1rem 0;
+}
+
+.i-hero-img {
+  position: absolute;
+  top: 6rem;
+  left: 55%;
+  width: 100%;
+  height: 22rem;
+  object-fit: cover;
+}
+.i-hero-content-container {
+  max-width: 69rem;
+  margin-inline: auto;
+}
+.i-hero-text {
+  width: 50%;
+  padding: 2rem;
+  font-size: 1.15rem;
+  color: #fff;
+  margin-block-end: 5rem;
+}
+
+.i-hero-text p:first-of-type {
+  font-family: var(--heading-typeface);
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing);
+}
+
+.i-hero-grid-cards {
+  padding-inline: 2rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gap);
+}
+
+/* Poodle */
+.i-poodle {
+  aspect-ratio: 16 / 9;
+  position: relative;
+}
+
+.i-poodle::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  content: '';
+  background-color: var(--secondary);
+  mix-blend-mode: saturation;
+}
+
+.i-poodle video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.i-poodle-flex {
+  position: relative;
+  position: relative;
+  z-index: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  font-family: var(--heading-typeface);
+  font-size: var(--h2);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--white);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing);
+}
+
+.i-poodle-top p + p {
+  margin-top: 0.15rem;
+}
+
+.i-poodle-top p:first-child {
+  opacity: 0.25;
+}
+
+.i-poodle-top p:nth-child(2) {
+  opacity: 0.75;
+}
+
+/* Cards */
+.i-home-cards-grid {
+  grid-template-columns: repeat(3, minmax(10rem, 12rem));
+  gap: var(--gap);
+  justify-content: center;
+}
+
+.i-home-cards {
+  overflow: hidden;
+  background-color: hsl(var(--primary-h), 90%, 70%);
+}
+
+.i-home-cards-bg-2 {
+  background-color: hsl(var(--complementary-color), 50%, 10%);
+}
+
+.i-home-cards-title {
+  margin: 1rem 0 2rem;
+  /* transform: translateY(25%); */
+  font-size: 3rem;
+  color: var(--white);
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.i-home-cards-title svg {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+}
+/* 
+.i-home-cards-title::before {
+    border-bottom: 1px solid;
+    width: 100vw;
+    height: 2px;
+    content: "";
+    position: absolute;
+    left: 0;
+} */
+
+/* CTA */
+.i-cta {
+  background-color: hsl(var(--complementary-color), 100%, 90%);
+}
+
+.i-cta h2 {
+  margin: 0 0 1rem;
+  text-align: center;
+  text-transform: uppercase;
+
+}
+
+.i-cta p {
+  max-width: 55ch;
+  margin-inline: auto;
+}
+
+.i-cta form {
+  display: flex;
+  flex-direction: column;
+  max-width: 30ch;
+  margin: 2rem auto 0;
+  gap: 1rem;
+}
+
+.i-cta .flex {
+  flex-direction: column;
+}
+
+.i-cta label {
+  align-self: flex-start;
+  height: 0;
+  font-size: var(--small);
+  font-weight: 700;
+  text-align: left;
+  letter-spacing: var(--letter-spacing);
+  visibility: hidden;
+}
+
+.i-cta input {
+  width: 100%;
+  padding: var(--button-padding);
+  font-family: inherit;
+  font-size: inherit;
+
+  font-weight: 700;
+  background-color: var(--white);
+  border: 3px solid var(--secondary);
+}
+
+.i-cta input:focus-visible,
+.i-cta:hover {
+  border-color: var(--primary);
+  outline: none;
+}
+
+.i-cta button {
+  padding: var(--button-padding);
+  font-family: inherit;
+  font-weight: 700;
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing);
+  background-color: var(--primary);
+}
+
+.i-cta button:hover,
+.i-cta button:focus-visible {
+  background-color: var(--primary-dark);
+  border: none;
+  outline: none;
+}
+
+.i-cta button:focus {
+}

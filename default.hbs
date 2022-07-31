@@ -1,37 +1,62 @@
 <!DOCTYPE html>
-<html lang="{{@site.locale}}">
+<html lang="{{@site.locale}}" data-color-pref="{{@custom.color_mode}}" data-accent-color="{{@site.accent_color}}">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{{meta_title}}</title>
+        {{!-- <link rel="preconnect" href="https://unpkg.com/"> --}}
+
+        {{! Load scripts to execute before render }}
+        <script>
+            const colorModePref = document.documentElement.dataset.colorPref;
+
+            const colorModePrefOpposite = colorModePref === 'dark' ? 'light' : 'dark'
+
+            if (
+                localStorage.getItem('pref') === colorModePrefOpposite ||
+                (window.matchMedia(`(prefers-color-scheme: ${colorModePrefOpposite})`).matches &&
+                    !localStorage.getItem('pref'))
+            ) {
+                document.documentElement.setAttribute('data-color-pref', colorModePrefOpposite);
+            }
+
+            {{!-- const SEARCH_API = "{{@custom.search}}" --}}
+        </script>
+        <script src="{{asset 'built/generateColorPalette.js'}}"></script>
 
         {{!-- CSS and JS with asset helper--}}
         <link rel="stylesheet" href="{{asset "built/app.css"}}" />
         <script src="{{asset "built/app.js"}}" defer></script>
+        {{^is "home"}}
+        <link rel="stylesheet" href="{{asset 'built/post.css'}}">
+        <script src="{{asset 'built/post.js'}}" defer></script>
+        {{/is}}
+
+        {{#if @custom.syntax_highlighting}}
+            {{#is "post"}}
+            <link rel="stylesheet" href="{{asset 'built/syntax-highlighting.css'}}">
+            <script src="{{asset 'built/syntax-highlighting.js'}}" defer></script>
+            {{/is}}
+        {{/if}}
 
         {{!-- contentFor/block scripts - use with defer --}}
         {{{block "scripts"}}}
         
         {{!-- Outputs important meta data and settings, should always be in <head> --}}
         {{ghost_head}}
+
+        <link rel="stylesheet" href="{{asset '/built/ghost-cards.css'}}">
     </head>
 
     <body class="{{body_class}}">
+            
+
+
+
+        {{{body}}}
         
-        <div class="grid">
-            {{!-- Navbar partial --}}
-            {{> "navbar"}}
-        </div>
-
-        <main id="theme-main">
-            {{!-- All content gets inserted here, index.hbs, post.hbs, etc --}}
-            {{{body}}}
-        </main>
-
-        <div class="grid">
-            {{!-- Navbar partial --}}
-            {{> "footer"}}
-        </div>
+        {{> "footer"}}
+        
 
         {{!-- Outputs important scripts - should always be included before closing body tag --}}
         {{ghost_foot}}
