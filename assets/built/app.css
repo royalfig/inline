@@ -293,12 +293,11 @@ small {
   width: 1.5rem;
   height: 1.5rem;
   color: var(--white);
-
 }
 .i-nav-center h1,
- .i-nav-center p,
+.i-nav-center p,
 .i-nav-center a {
-  font-size: var(--h3);
+  font-size: var(--h5);
   font-weight: 700;
   color: var(--white);
   text-decoration: none;
@@ -325,7 +324,9 @@ small {
     text-decoration: none;
 }
 /* Pages */
-.home-template {padding: 1rem;}
+.home-template {
+  padding: 1rem;
+}
 .i-home-section {
   max-width: 85vw;
   padding: 3rem 2rem;
@@ -471,21 +472,28 @@ small {
   margin: 0 0 1rem;
   text-align: center;
   text-transform: uppercase;
-
 }
 .i-cta p {
   max-width: 55ch;
   margin-inline: auto;
 }
+.i-cta p + p {
+  -webkit-margin-before: 1em;
+          margin-block-start: 1em;
+}
 .i-cta form {
   display: flex;
   flex-direction: column;
-  max-width: 30ch;
-  margin: 2rem auto 0;
+  max-width: 55ch;
+  margin-inline: auto;
   gap: 1rem;
+  width: 100%;
 }
 .i-cta .flex {
   flex-direction: column;
+}
+.i-cta-form .flex-column {
+  position: relative;
 }
 .i-cta label {
   align-self: flex-start;
@@ -496,9 +504,18 @@ small {
   letter-spacing: var(--letter-spacing);
   visibility: hidden;
 }
+.i-cta-icon {
+  height: 1em;
+  width: 1em;
+  position: absolute;
+  top: 50%;
+  left: 0.5em;
+  transform: translateY(-50%);
+}
+/* form states */
 .i-cta input {
   width: 100%;
-  padding: var(--button-padding);
+  padding: 0.5em 0.5em 0.5em 2em;
   font-family: inherit;
   font-size: inherit;
 
@@ -542,7 +559,7 @@ small {
 /* Header */
 .i-post-header {
   position: relative;
-  min-height: 90vh;
+  height: 90vh;
 }
 .i-post-header::after {
   position: absolute;
@@ -563,6 +580,13 @@ small {
   -o-object-fit: cover;
      object-fit: cover;
 }
+.i-post-header-grid {
+  grid-template: 1fr 1fr 1fr / 1fr 1fr;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
 .i-post-header-navbar,
 .i-post-header-text,
 .i-post-header-meta {
@@ -570,29 +594,41 @@ small {
   z-index: 1;
   color: var(--white);
 }
-.i-post-header-navbar {
-  padding: 1rem;
+.i-post-header-grid .i-nav-flex {
+  grid-column: 1 / span 2;
+  align-self: start;
+  position: relative;
+  z-index: 1;
 }
 .i-post-header-text {
-  max-width: 55ch;
-  -webkit-margin-before: 15vh;
-          margin-block-start: 15vh;
-  -webkit-margin-start: 5rem;
-          margin-inline-start: 5rem;
+  grid-column: 1 / span 1;
+  max-width: 60ch;
+  -webkit-padding-start: 5rem;
+          padding-inline-start: 5rem;
 }
 .i-post-header h1 {
-  font-size: var(--h2);
+  /* font-size: var(--h2); */
   line-height: 1.1;
   text-transform: uppercase;
 }
+.tag-ghost-tag h1,
+.tag-ghost-tag .i-icon {
+  color: hsl(calc(var(--primary-h) + 20) var(--saturation) 90%);
+}
+.tag-web-design h1,
+.tag-web-design .i-icon {
+  color: hsl(calc(var(--primary-h) * 0.25) var(--saturation) 80%);
+}
+.tag-words h1,
+.tag-words .i-icon {
+  color: hsl(calc(var(--primary-h) - 70) var(--saturation) 80%);
+}
 .i-post-header-meta {
-  float: right;
-  -webkit-margin-end: 5rem;
-          margin-inline-end: 5rem;
-  -webkit-margin-before: 7.5rem;
-          margin-block-start: 7.5rem;
-  max-width: 55ch;
   text-align: right;
+  grid-column: 2 / -1;
+  grid-row: 3;
+  -webkit-padding-end: 5rem;
+          padding-inline-end: 5rem;
 }
 .i-post-header-meta-author {
   font-weight: 700;
@@ -615,10 +651,6 @@ small {
   width: 1rem;
   height: 2rem;
   line-height: 1;
-  color: var(--primary);
-}
-.i-icon:hover {
-  color: var(--secondary);
 }
 .i-icon > svg {
   width: 100%;
@@ -634,6 +666,18 @@ small {
   display: inline;
   display: initial;
 }
+.i-post-header-caption {
+  grid-row: 3;
+  position: relative;
+  color: var(--white);
+  font-size: var(--x-small);
+  text-transform: uppercase;
+  z-index: 1;
+  align-self: end;
+  -webkit-margin-start: 5rem;
+          margin-inline-start: 5rem;
+  opacity: 0.5;
+}
 /* Post body */
 .i-post-container-grid {
   grid-template-columns: var(--gap) [content-start] 1fr [content-end] var(--gap);
@@ -645,11 +689,10 @@ small {
   grid-template-columns: 1fr 1fr [content-start] minmax(0, 640px) [content-end] 1fr 1fr;
   grid-column: content;
 
-overflow: hidden;
+  overflow: hidden;
 }
 .i-post-grid > * {
   grid-column: content;
-
 }
 /* These styles define the content of a post (and page). You could add styles for bold font, quotes, etc. */
 .post > * {

@@ -1,4 +1,6 @@
-.home-template {padding: 1rem;}
+.home-template {
+  padding: 1rem;
+}
 .i-home-section {
   max-width: 85vw;
   padding: 3rem 2rem;
@@ -160,24 +162,31 @@
   margin: 0 0 1rem;
   text-align: center;
   text-transform: uppercase;
-
 }
 
 .i-cta p {
   max-width: 55ch;
   margin-inline: auto;
 }
+.i-cta p + p {
+  margin-block-start: 1em;
+}
 
 .i-cta form {
   display: flex;
   flex-direction: column;
-  max-width: 30ch;
-  margin: 2rem auto 0;
+  max-width: 55ch;
+  margin-inline: auto;
   gap: 1rem;
+  width: 100%;
 }
 
 .i-cta .flex {
   flex-direction: column;
+}
+
+.i-cta-form .flex-column {
+  position: relative;
 }
 
 .i-cta label {
@@ -190,9 +199,20 @@
   visibility: hidden;
 }
 
+.i-cta-icon {
+  height: 1em;
+  width: 1em;
+  position: absolute;
+  top: 50%;
+  left: 0.5em;
+  transform: translateY(-50%);
+}
+
+/* form states */
+
 .i-cta input {
   width: 100%;
-  padding: var(--button-padding);
+  padding: 0.5em 0.5em 0.5em 2em;
   font-family: inherit;
   font-size: inherit;
 

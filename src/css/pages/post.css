@@ -1,7 +1,7 @@
 /* Header */
 .i-post-header {
   position: relative;
-  min-height: 90vh;
+  height: 90vh;
 }
 
 .i-post-header::after {
@@ -14,7 +14,6 @@
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-
 .i-post-header-img {
   position: absolute;
   top: 0;
@@ -25,6 +24,13 @@
   object-fit: cover;
 }
 
+.i-post-header-grid {
+  grid-template: 1fr 1fr 1fr / 1fr 1fr;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
 
 .i-post-header-navbar,
 .i-post-header-text,
@@ -34,28 +40,45 @@
   color: var(--white);
 }
 
-.i-post-header-navbar {
-  padding: 1rem;
+.i-post-header-grid .i-nav-flex {
+  grid-column: 1 / span 2;
+  align-self: start;
+  position: relative;
+  z-index: 1;
 }
 
 .i-post-header-text {
-  max-width: 55ch;
-  margin-block-start: 15vh;
-  margin-inline-start: 5rem;
+  grid-column: 1 / span 1;
+  max-width: 60ch;
+  padding-inline-start: 5rem;
 }
 
 .i-post-header h1 {
-  font-size: var(--h2);
+  /* font-size: var(--h2); */
   line-height: 1.1;
   text-transform: uppercase;
 }
 
+.tag-ghost-tag h1,
+.tag-ghost-tag .i-icon {
+  color: hsl(calc(var(--primary-h) + 20), var(--saturation), 90%);
+}
+
+.tag-web-design h1,
+.tag-web-design .i-icon {
+  color: hsl(calc(var(--primary-h) * 0.25), var(--saturation), 80%);
+}
+
+.tag-words h1,
+.tag-words .i-icon {
+  color: hsl(calc(var(--primary-h) - 70), var(--saturation), 80%);
+}
+
 .i-post-header-meta {
-  float: right;
-  margin-inline-end: 5rem;
-  margin-block-start: 7.5rem;
-  max-width: 55ch;
   text-align: right;
+  grid-column: 2 / -1;
+  grid-row: 3;
+  padding-inline-end: 5rem;
 }
 
 .i-post-header-meta-author {
@@ -82,11 +105,6 @@
   width: 1rem;
   height: 2rem;
   line-height: 1;
-  color: var(--primary);
-}
-
-.i-icon:hover {
-  color: var(--secondary);
 }
 
 .i-icon > svg {
@@ -105,6 +123,18 @@
 .copied .copied {
   display: initial;
 }
+
+.i-post-header-caption {
+  grid-row: 3;
+  position: relative;
+  color: var(--white);
+  font-size: var(--x-small);
+  text-transform: uppercase;
+  z-index: 1;
+  align-self: end;
+  margin-inline-start: 5rem;
+  opacity: 0.5;
+}
 /* Post body */
 .i-post-container-grid {
   grid-template-columns: var(--gap) [content-start] 1fr [content-end] var(--gap);
@@ -117,10 +147,9 @@
   grid-template-columns: 1fr 1fr [content-start] minmax(0, 640px) [content-end] 1fr 1fr;
   grid-column: content;
 
-overflow: hidden;
+  overflow: hidden;
 }
 
 .i-post-grid > * {
   grid-column: content;
-
 }

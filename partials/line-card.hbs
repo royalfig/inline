@@ -1,12 +1,16 @@
-<article class="i-card-line">
-    <div class="i-card-line-flex">
-        <p class="i-card-line-tag">
-            {{#primary_tag}}{{name}}{{/primary_tag}}
-        </p>
-        <p class="i-card-line-date">{{date}}</p>
-    </div>
-    <h2 class="i-card-line-title"><a href="{{url}}">{{title}}</a></h2>
-    {{#primary_tag}}
-    <img class="i-card-line-img" src={{img_url feature_image size="s"}} alt="{{name}}">
-    {{/primary_tag}}
+<article class='i-card-line'>
+  <div class='i-card-line-flex'>
+    <p class='i-card-line-tag'>
+      {{#primary_tag}}{{name}}{{/primary_tag}}
+    </p>
+    <p class='i-card-line-date'>{{date}}</p>
+  </div>
+  <h2 class='i-card-line-title'><a href='{{url}}'>{{title}}</a></h2>
+  {{#primary_tag}}
+    <img
+      class='i-card-line-img'
+      src={{img_url feature_image size='s'}}
+      alt='{{name}}'
+    />
+  {{/primary_tag}}
 </article>

@@ -7,13 +7,12 @@
   width: 1.5rem;
   height: 1.5rem;
   color: var(--white);
-
 }
 
 .i-nav-center h1,
- .i-nav-center p,
+.i-nav-center p,
 .i-nav-center a {
-  font-size: var(--h3);
+  font-size: var(--h5);
   font-weight: 700;
   color: var(--white);
   text-decoration: none;
