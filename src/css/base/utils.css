@@ -1,17 +1,25 @@
 [class*='grid'] {
-    display: grid;
-  }
-  
-  [class*='flex'] {
-    display: flex;
-    align-items: center;
-  }
+  display: grid;
+}
+
+[class*='flex'] {
+  display: flex;
+  align-items: center;
+}
 
 .flex-row,
- .flex-column {
-    gap: 1rem;
+.flex-column {
+  gap: 1rem;
 }
 
 .flex-column {
-    flex-direction: column;
+  flex-direction: column;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.scroll-snap {
+  scroll-snap-type: y mandatory;
 }

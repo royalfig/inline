@@ -1,5 +1,6 @@
 /* Variables */
 @import './abstracts/variables.css';
+@import './abstracts/colors.css';
 
 /* Base */
 @import './base/reset.css';
@@ -22,7 +23,7 @@
 /* Components */
 @import './components/card.css';
 @import './components/toc.css';
-
+@import './components/menu.css';
 
 /* Vendor */
 @import './vendors/ghost.css';

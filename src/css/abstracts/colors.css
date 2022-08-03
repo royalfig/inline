@@ -1,0 +1,35 @@
+.tag-ghost-tag h1,
+.tag-ghost-tag .i-icon,
+.tag-ghost-tag a {
+  color: hsl(calc(var(--primary-h) + 20), var(--saturation), 90%);
+}
+
+.tag-things h1,
+.tag-things a,
+.tag-things .i-icon {
+  color: hsl(calc(var(--primary-h) + 70), var(--saturation), 80%);
+}
+
+.tag-words h1,
+.tag-words a,
+.tag-words .i-icon {
+  color: hsl(calc(var(--primary-h) - 70), var(--saturation), 80%);
+}
+
+.tag-academic h1,
+.tag-academic a,
+.tag-academic .i-icon {
+  color: hsl(calc(var(--complementary-color) - 70), var(--saturation), 80%);
+}
+
+.tag-web-dev h1,
+.tag-web-dev a,
+.tag-web-dev .i-icon {
+  color: hsl(calc(var(--complementary-color) + 70), var(--saturation), 80%);
+}
+
+.tag-travel h1,
+.tag-travel a,
+.tag-travel .i-icon {
+  color: hsl(calc(var(--complementary-color) * 0.25), var(--saturation), 80%);
+}
