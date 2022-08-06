@@ -1,0 +1,90 @@
+.i-search {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: none;
+  z-index: 1000;
+  background-color: rgba(0 0 0 / 0.95);
+  backdrop-filter: blur(4px);
+  overflow-y: auto;
+  padding-block-end: 3rem;
+}
+
+.i-search.i-show {
+  display: initial;
+}
+
+.i-search-input-container {
+  padding: 1em;
+  background-color: var(--surface-darker);
+}
+
+.i-search-icon,
+.i-search-close svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--white);
+}
+
+.i-search-input {
+  background-color: transparent;
+  font-family: inherit;
+  line-height: inherit;
+  font-size: var(--h4);
+  color: var(--white);
+  border: none;
+  width: 100%;
+  border-bottom: 1px solid var(--element-light);
+}
+
+.i-search-input:focus-visible {
+  border-color: var(--primary);
+  outline: none;
+}
+
+.i-search-results {
+  margin-block-start: 3rem;
+  padding: 0 3.5rem;
+}
+
+.i-search-result {
+  font-size: var(--h3);
+  /* text-transform: uppercase; */
+  /* letter-spacing: var(--letter-spacing); */
+  /* text-align: center; */
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.i-search-result + div {
+  margin-block-start: 1em;
+}
+
+.i-search-result a {
+  text-decoration: none;
+  color: var(--primary);
+}
+
+.i-search-result a:hover,
+.i-search-result a:focus-visible {
+  color: var(--secondary);
+}
+
+.i-search-excerpt {
+  color: var(--white);
+  font-size: var(--small);
+  font-weight: normal;
+  line-height: 1.6;
+}
+
+.i-search-tag {
+  font-size: var(--x-small);
+  color: var(--surface);
+  text-transform: uppercase;
+  background: var(--white);
+  padding: var(--button-padding);
+  display: inline-block;
+  margin-block-end: 0.5em;
+}

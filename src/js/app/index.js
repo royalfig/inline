@@ -1,5 +1,7 @@
 import '../../css/app.css';
-
+import clickHandler from './clickHandler';
+import keyHandler from './keyHandler';
+import search from './search';
 // LiveReload server
 // eslint-disable-next-line no-undef
 if (ENV === 'development') {
@@ -11,31 +13,7 @@ if (ENV === 'development') {
   console.info('Reload script added');
 }
 
-function clickHandler(e) {
-  const { target } = e;
-
-  if (target.closest('.i-copy-button')) {
-    navigator.clipboard.writeText(window.location.href);
-    target.closest('.i-copy-button').classList.toggle('copied');
-    setTimeout(
-      () => target.closest('.i-copy-button').classList.toggle('copied'),
-      2000,
-    );
-  }
-
-  if (target.closest('.i-menu-button')) {
-    document.querySelector('.i-menu').classList.toggle('i-menu-show');
-    document.body.classList.toggle('no-scroll');
-  }
-
-  if (target.closest('.i-post-header-caption')) {
-    target.closest('.i-post-header-caption').classList.toggle('i-caption-show');
-  }
-
-  if (target.closest('.i-menu-close')) {
-    document.querySelector('.i-menu').classList.toggle('i-menu-show');
-    document.body.classList.toggle('no-scroll');
-  }
-}
-
 document.body.addEventListener('click', clickHandler);
+document.body.addEventListener('keydown', keyHandler);
+
+search();

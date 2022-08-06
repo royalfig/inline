@@ -156,6 +156,7 @@
     "stylelint-order": "5.0.0"
   },
   "dependencies": {
-    "highlight.js": "^11.6.0"
+    "highlight.js": "^11.6.0",
+    "minisearch": "^5.0.0"
   }
 }

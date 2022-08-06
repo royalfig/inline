@@ -281,7 +281,8 @@ button > svg {
   font-weight: 700;
   font-display: swap;
   src: local(''),
-    url('/assets/fonts/libre-franklin-v13-latin-700italic.woff2') format('woff2'),
+    url('/assets/fonts/libre-franklin-v13-latin-700italic.woff2')
+      format('woff2'),
     url('/assets/fonts/libre-franklin-v13-latin-700italic.woff') format('woff');
 }
 html {
@@ -294,11 +295,13 @@ html {
     1.375rem
   );
   line-height: 1.6;
+  font-size: 1rem;
+  font-size: clamp(1rem, 0.800531914893617rem + 0.6382978723404256vw, 1.375rem);
 }
 body {
   height: 100%;
   min-height: 100vh;
-  
+
   background-color: var(--primary);
   background-image: var(--mesh-gradient);
 }
@@ -762,7 +765,7 @@ small {
 .i-post-header-caption-text {
   display: none;
 }
-.i-caption-show .i-post-header-caption-text {
+.i-show .i-post-header-caption-text {
   display: inline;
   display: initial;
 }
@@ -798,6 +801,7 @@ small {
   list-style-position: inside;
 }
 /* Components */
+/* Line card */
 .i-card-line {
   position: relative;
   border-top: 1px solid var(--primary);
@@ -846,6 +850,7 @@ small {
 /* Picture cards */
 .i-picture-card {
   width: 100%;
+  overflow: hidden;
 }
 .i-picture-card-link-flex {
   position: relative;
@@ -857,13 +862,17 @@ small {
   aspect-ratio: 3 / 4;
 }
 .i-picture-card-link-flex::after {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    content: '';
-    background: rgba(0,  0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  content: '';
+  background: rgba(0, 0, 0, 0.5);
+}
+.i-picture-card-link-flex:hover img,
+.i-picture-card-link-flex:focus img {
+  transform: scale(1.5) rotate(15deg);
 }
 .i-picture-card img {
   position: absolute;
@@ -949,7 +958,7 @@ summary:hover {
   text-align: center;
   z-index: 1000;
 }
-.i-menu.i-menu-show {
+.i-menu.i-show {
   display: flex;
 }
 .i-menu-close {
@@ -1019,6 +1028,98 @@ summary:hover {
 }
 [data-color-pref='light'] [data-pref='Light Mode'] {
   display: none;
+}
+.i-search {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: none;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.95);
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+  overflow-y: auto;
+  -webkit-padding-after: 3rem;
+          padding-block-end: 3rem;
+}
+.i-search.i-show {
+  display: inline;
+  display: initial;
+}
+.i-search-input-container {
+  padding: 1em;
+  background-color: var(--surface-darker);
+}
+.i-search-icon,
+.i-search-close svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--white);
+}
+.i-search-input {
+  background-color: transparent;
+  font-family: inherit;
+  line-height: inherit;
+  font-size: var(--h4);
+  color: var(--white);
+  border: none;
+  width: 100%;
+  border-bottom: 1px solid var(--element-light);
+}
+.i-search-input.focus-visible {
+  border-color: var(--primary);
+  outline: none;
+}
+.i-search-input:focus-visible {
+  border-color: var(--primary);
+  outline: none;
+}
+.i-search-results {
+  -webkit-margin-before: 3rem;
+          margin-block-start: 3rem;
+  padding: 0 3.5rem;
+}
+.i-search-result {
+  font-size: var(--h3);
+  /* text-transform: uppercase; */
+  /* letter-spacing: var(--letter-spacing); */
+  /* text-align: center; */
+  font-weight: 700;
+  line-height: 1.3;
+}
+.i-search-result + div {
+  -webkit-margin-before: 1em;
+          margin-block-start: 1em;
+}
+.i-search-result a {
+  text-decoration: none;
+  color: var(--primary);
+}
+.i-search-result a:hover,
+.i-search-result a.focus-visible {
+  color: var(--secondary);
+}
+.i-search-result a:hover,
+.i-search-result a:focus-visible {
+  color: var(--secondary);
+}
+.i-search-excerpt {
+  color: var(--white);
+  font-size: var(--small);
+  font-weight: normal;
+  line-height: 1.6;
+}
+.i-search-tag {
+  font-size: var(--x-small);
+  color: var(--surface);
+  text-transform: uppercase;
+  background: var(--white);
+  padding: var(--button-padding);
+  display: inline-block;
+  -webkit-margin-after: 0.5em;
+          margin-block-end: 0.5em;
 }
 /* Vendor */
 /* These styles are required by Ghost 👻 and apply to editor cards. These styles are derived from Ghost defaults: https://ghost.org/docs/themes/content/ */

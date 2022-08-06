@@ -24,6 +24,7 @@
 @import './components/card.css';
 @import './components/toc.css';
 @import './components/menu.css';
+@import './components/search.css';
 
 /* Vendor */
 @import './vendors/ghost.css';
