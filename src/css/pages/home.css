@@ -11,6 +11,27 @@
   justify-content: center;
   flex-direction: column;
   scroll-snap-align: center;
+  --bg-primary-1: hsl(var(--primary-h), 50%, 10%);
+  --bg-primary-2: hsl(var(--primary-h), 50%, 10%);
+  --bg-secondary-1: hsl(var(--complementary-color), 50%, 10%);
+  --bg-secondary-2: hsl(var(--complementary-color), 50%, 10%);
+  --bg-tertiary-1: hsl(calc(var(--primary-h) + 300), 50%, 10%);
+}
+
+.i-home-section:nth-of-type(2) {
+  background-color: var(--bg-secondary-1);
+}
+
+.i-home-section:nth-of-type(3) {
+  background-color: var(--bg-tertiary-1);
+}
+
+.i-home-section:nth-of-type(5) {
+  background-color: var(--bg-primary-2);
+}
+
+.i-home-section:nth-of-type(7) {
+  background-color: var(--bg-secondary-2);
 }
 
 /* Hero */
@@ -22,17 +43,19 @@
   padding-bottom: 5rem;
   margin-block-start: 1rem;
   overflow: hidden;
-  background-color: hsl(var(--primary-h), 30%, 20%);
+  background-color: var(--bg-primary-1);
   padding: 0;
 }
+
 .i-hero-grid-flex {
   flex-direction: column;
   height: 100%;
   justify-content: center;
 }
+
 .i-hero-inner-border {
   position: absolute;
-  top: 1rem;
+  top: 1.5rem;
   left: 50%;
   height: calc(100% - 3rem);
   width: calc(100% - 3rem);
@@ -55,10 +78,12 @@
   object-fit: cover;
   transform: translateY(-15%);
 }
+
 .i-hero-content-container {
   max-width: 69rem;
   margin-inline: auto;
 }
+
 .i-hero-text {
   font-size: 1.15rem;
   color: var(--white);
@@ -151,11 +176,9 @@
 
 .i-home-cards {
   overflow: hidden;
-  background-color: hsl(var(--primary-h), 90%, 70%);
 }
 
 .i-home-cards-bg-2 {
-  background-color: hsl(var(--complementary-color), 50%, 10%);
 }
 
 .i-home-cards-title-flex {
@@ -188,15 +211,15 @@
 
 /* CTA */
 .i-cta {
-  background-color: hsl(var(--complementary-color), 100%, 90%);
+  background-color: hsl(var(--complementary-color), 50%, 90%);
 }
 
 .i-cta h2 {
-  color: var(--black, #000);
+  color: #000;
 }
 
 .i-cta p {
-  max-width: 55ch;
+  max-width: 50ch;
   margin-inline: auto;
 }
 .i-cta p + p {
@@ -206,7 +229,7 @@
 .i-cta form {
   display: flex;
   flex-direction: column;
-  max-width: 55ch;
+  max-width: 50ch;
   margin-inline: auto;
   gap: 1rem;
   width: 100%;
@@ -262,7 +285,7 @@
   padding: var(--button-padding);
   font-family: inherit;
   font-weight: 700;
-  color: var(--white);
+  color: inherit;
   text-transform: uppercase;
   letter-spacing: var(--letter-spacing);
   background-color: var(--primary);
@@ -270,7 +293,7 @@
 
 .i-cta button:hover,
 .i-cta button:focus-visible {
-  background-color: var(--primary-dark);
+  background-color: var(--secondary);
   border: none;
   outline: none;
 }

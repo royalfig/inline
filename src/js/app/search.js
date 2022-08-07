@@ -36,9 +36,15 @@ export default async function search() {
 
 function resultTemplate(results) {
   return results
-    .map(({ title, url, primary_tag, excerpt }) => {
+    .map(({ title, url, primary_tag, excerpt, score }) => {
       return `<div class="i-search-result">
-      <p class="i-search-tag">${primary_tag?.name}</p>
+      <div class="i-search-tags flex-row">
+        <p class="i-search-tag">${
+          primary_tag?.name
+        }</p><span class="i-search-score" style="width: ${
+        (score / results[0].score) * 100
+      }%"></span>
+      </div>
         <p><a href="${url}">${title}</a> </p>
         <p class="i-search-excerpt">${excerpt}</p>
               </div>`;

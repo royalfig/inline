@@ -1,35 +1,187 @@
-.tag-ghost-tag h1,
-.tag-ghost-tag .i-icon,
-.tag-ghost-tag a {
-  color: hsl(calc(var(--primary-h) + 20), var(--saturation), 90%);
+/* Color scheme */
+:root[data-color-pref='light'] {
+  --primary: hsl(var(--primary-h) var(--saturation) var(--lightness));
+  --primary-light: hsl(
+    var(--primary-h) var(--saturation) calc(var(--lightness) * 1.5)
+  );
+  --primary-dark: hsl(
+    var(--primary-h) var(--saturation) calc(var(--lightness) * 0.5)
+  );
+  --secondary: hsl(
+    var(--complementary-color) var(--saturation) var(--lightness)
+  );
+  --secondary-light: hsl(
+    var(--complementary-color) var(--saturation) calc(var(--lightness) * 1.5)
+  );
+  --secondary-dark: hsl(
+    var(--complementary-color) var(--saturation) calc(var(--lightness) * 0.5)
+  );
+
+  --surface: hsl(var(--primary-h) 5% 98%);
+  --surface-85: hsla(var(--primary-h) 5% 98% / 0.85);
+  --surface-light: hsl(var(--primary-h) 5% 100%);
+  --surface-dark: hsl(var(--primary-h) 5% 89%);
+  --surface-darker: hsl(var(--primary-h) 5% 82%);
+
+  --element: hsl(var(--primary-h) 10% 5%);
+  --element-light: hsl(var(--primary-h) 10% 35%);
+  --element-dark: hsl(var(--primary-h) 10% 1%);
+  --white: #fff;
+
+  --border-color: hsla(var(--primary-h) 10% 82% / 0.5);
+  --border-color-accent: hsla(var(--primary-h) 10% 72% / 0.5);
+  --button-text: hsl(var(--primary-h) 10% 100%);
+
+  --box-shadow: 0 0.7px 2.2px hsla(var(--primary-h) var(--saturation) 9% / 0.02),
+    0 1.6px 5.3px hsla(var(--primary-h) var(--saturation) 9% / 0.028),
+    0 3px 10px hsla(var(--primary-h) var(--saturation) 9% / 0.035),
+    0 5.4px 17.9px hsla(var(--primary-h) var(--saturation) 9% / 0.042),
+    0 10px 33.4px hsla(var(--primary-h) var(--saturation) 9% / 0.05),
+    0 24px 80px hsla(var(--primary-h) var(--saturation) 9% / 0.07);
+
+  --gradient-bg: var(--primary);
+  --mesh-gradient: radial-gradient(
+      at 40% 20%,
+      hsla(var(--primary-h), 100%, 74%, 1) 0,
+      transparent 50%
+    ),
+    radial-gradient(
+      at 80% 0%,
+      hsla(calc(var(--primary-h) - 10), 100%, 56%, 1) 0,
+      transparent 50%
+    ),
+    radial-gradient(
+      at 0% 50%,
+      hsla(var(--complementary-color), 100%, 93%, 1) 0,
+      transparent 50%
+    ),
+    radial-gradient(
+      at 80% 50%,
+      hsla(calc(var(--complementary-color) + 10), 100%, 76%, 1) 0,
+      transparent 50%
+    ),
+    radial-gradient(
+      at 0% 100%,
+      hsla(calc(var(--complementary-color) - 10), 100%, 77%, 1) 0,
+      transparent 50%
+    ),
+    radial-gradient(
+      at 80% 100%,
+      hsla(calc(var(--primary-h) - 20), 100%, 70%, 1) 0,
+      transparent 50%
+    ),
+    radial-gradient(
+      at 0% 0%,
+      hsla(calc(var(--primary-h) - 10), 100%, 76%, 1) 0,
+      transparent 50%
+    );
 }
 
-.tag-things h1,
-.tag-things a,
-.tag-things .i-icon {
-  color: hsl(calc(var(--primary-h) + 70), var(--saturation), 80%);
+:root[data-color-pref='dark'] {
+  /* Color */
+  --primary: hsl(
+    var(--primary-h) var(--saturation) calc(var(--lightness) * 1.5)
+  );
+  --primary-light: hsl(
+    var(--primary-h) var(--saturation) calc(var(--lightness) * 1.75)
+  );
+  --primary-dark: hsl(
+    var(--primary-h) var(--saturation) calc(var(--lightness) * 1.15)
+  );
+
+  --secondary: hsl(
+    var(--complementary-color) var(--saturation) calc(var(--lightness) * 1.5)
+  );
+  --secondary-light: hsl(
+    var(--complementary-color) var(--saturation) calc(var(--lightness) * 1.75)
+  );
+  --secondary-dark: hsl(
+    var(--complementary-color) var(--saturation) calc(var(--lightness) * 1.15)
+  );
+
+  --element: hsl(var(--primary-h) 10% 96%);
+  --element-light: hsl(var(--primary-h) 10% 100%);
+  --element-dark: hsl(var(--primary-h) 10% 89%);
+  --element-darker: hsl(var(--primary-h) 10% 82%);
+
+  --surface: hsl(var(--primary-h) 5% 5%);
+  --surface-85: hsla(var(--primary-h) 5% 5% / 0.85);
+  --surface-light: hsl(var(--primary-h) 5% 15%);
+  --surface-dark: hsl(var(--primary-h) 5% 3%);
+  --surface-darker: hsl(var(--primary-h) 5% 1%);
+  --white: #fff;
+
+  --border-color: hsla(var(--primary-h) 10% 35% / 0.5);
+  --border-color-accent: hsla(var(--primary-h) 10% 25% / 0.5);
+  --button-text: hsl(var(--primary-h) 10% 3%);
+
+  --box-shadow: 0 0.7px 2.2px hsla(var(--primary-h) var(--saturation) 1% / 0.02),
+    0 1.6px 5.3px hsla(var(--primary-h) var(--saturation) 1% / 0.048),
+    0 3px 10px hsla(var(--primary-h) var(--saturation) 1% / 0.055),
+    0 5.4px 17.9px hsla(var(--primary-h) var(--saturation) 1% / 0.062),
+    0 10px 33.4px hsla(var(--primary-h) var(--saturation) 1% / 0.07),
+    0 24px 80px hsla(var(--primary-h) var(--saturation) 1% / 0.09);
+
+  --gradient-bg: var(--primary);
+  --mesh-gradient: radial-gradient(
+      at 40% 20%,
+      hsla(var(--primary-h), 100%, 74%, 1) 0,
+      transparent 50%
+    ),
+    radial-gradient(
+      at 80% 0%,
+      hsla(calc(var(--primary-h) - 10), 100%, 56%, 1) 0,
+      transparent 50%
+    ),
+    radial-gradient(
+      at 0% 50%,
+      hsla(var(--complementary-color), 100%, 93%, 1) 0,
+      transparent 50%
+    ),
+    radial-gradient(
+      at 80% 50%,
+      hsla(calc(var(--complementary-color) + 10), 100%, 76%, 1) 0,
+      transparent 50%
+    ),
+    radial-gradient(
+      at 0% 100%,
+      hsla(calc(var(--complementary-color) - 10), 100%, 77%, 1) 0,
+      transparent 50%
+    ),
+    radial-gradient(
+      at 80% 100%,
+      hsla(calc(var(--primary-h) - 20), 100%, 70%, 1) 0,
+      transparent 50%
+    ),
+    radial-gradient(
+      at 0% 0%,
+      hsla(calc(var(--primary-h) - 10), 100%, 76%, 1) 0,
+      transparent 50%
+    );
 }
 
-.tag-words h1,
-.tag-words a,
-.tag-words .i-icon {
-  color: hsl(calc(var(--primary-h) - 70), var(--saturation), 80%);
+/* webdev, things, ghost, travel, academic, words */
+
+.tag-web-dev {
+  --tag: hsl(calc(var(--complementary-color) + 70), var(--saturation), 80%);
 }
 
-.tag-academic h1,
-.tag-academic a,
-.tag-academic .i-icon {
-  color: hsl(calc(var(--complementary-color) - 70), var(--saturation), 80%);
+.tag-ghost-tag {
+  --tag: hsl(calc(var(--primary-h) + 20), var(--saturation), 80%);
 }
 
-.tag-web-dev h1,
-.tag-web-dev a,
-.tag-web-dev .i-icon {
-  color: hsl(calc(var(--complementary-color) + 70), var(--saturation), 80%);
+.tag-things {
+  --tag: hsl(calc(var(--primary-h) + 70), var(--saturation), 80%);
 }
 
-.tag-travel h1,
-.tag-travel a,
-.tag-travel .i-icon {
-  color: hsl(calc(var(--complementary-color) * 0.25), var(--saturation), 80%);
+.tag-words {
+  --tag: hsl(calc(var(--primary-h) - 70), var(--saturation), 80%);
+}
+
+.tag-academic {
+  --tag: hsl(calc(var(--complementary-color) - 70), var(--saturation), 80%);
+}
+
+.tag-academic {
+  --tag: hsl(calc(var(--complementary-color) * 0.25), var(--saturation), 80%);
 }

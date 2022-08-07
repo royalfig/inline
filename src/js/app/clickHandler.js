@@ -34,6 +34,12 @@ export default function clickHandler(e) {
     document.querySelector('.i-menu').classList.toggle('i-show');
     document.body.classList.toggle('no-scroll');
   }
+
+  if (target.closest('.i-mode-button')) {
+    const { pref } = target.closest('.i-mode-button').dataset;
+    document.documentElement.dataset.colorPref = pref;
+    localStorage.setItem('pref', pref);
+  }
 }
 
 export function launchSearch() {

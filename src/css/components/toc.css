@@ -1,57 +1,53 @@
 summary:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .i-toc-content strong {
-    text-transform: uppercase;
-    font-family: var(--heading-typeface);
-    font-size: var(--small);
-    letter-spacing: var(--letter-spacing);
+  text-transform: uppercase;
+  font-family: var(--heading-typeface);
+  font-size: var(--small);
+  letter-spacing: var(--letter-spacing);
 }
 
 .i-toc-content a {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 
-[class^="i-toc-h"] {
-    color: var(--primary);
-    
+[class^='i-toc-h'] {
+  color: var(--primary);
 }
 
-[class^="i-toc-h"] a:hover {
-    color: var(--secondary);
+[class^='i-toc-h'] a:hover {
+  color: var(--secondary);
 }
 
 .i-toc-h2::before {
-    content: "\00274D";
-    margin-inline-end:.5em;
-    color: inherit;
+  content: '\002015';
+  margin-inline-end: 0.5em;
+  color: inherit;
 }
 
 .i-toc-h3::before {
-    content: "\00274D\00274D";
-    margin-inline-end:.5em;
-    color: inherit;
+  content: '\002015\002015';
+  margin-inline-end: 0.5em;
+  color: inherit;
 }
-
 
 .i-toc-h4::before {
-    content: "\00274D\00274D\00274D";
-    margin-inline-end:.5em;
-    color: inherit;
+  content: '\002015\002015\002015';
+  margin-inline-end: 0.5em;
+  color: inherit;
 }
-
 
 .i-toc-h5::before {
-    content: "\00274D\00274D\00274D\00274D";
-    margin-inline-end:.5em;
-    color: inherit;
+  content: '\002015\002015\002015\002015';
+  margin-inline-end: 0.5em;
+  color: inherit;
 }
 
-
 .i-toc-h6::before {
-    content: "\00274D\00274D\00274D\00274D\00274D";
-    margin-inline-end:.5em;
-    color: inherit;
+  content: '\002015\002015\002015\002015\002015';
+  margin-inline-end: 0.5em;
+  color: inherit;
 }

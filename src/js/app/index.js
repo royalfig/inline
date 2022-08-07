@@ -2,6 +2,7 @@ import '../../css/app.css';
 import clickHandler from './clickHandler';
 import keyHandler from './keyHandler';
 import search from './search';
+import { determineColorModeSupport } from './colorModeToggle';
 // LiveReload server
 // eslint-disable-next-line no-undef
 if (ENV === 'development') {
@@ -17,3 +18,8 @@ document.body.addEventListener('click', clickHandler);
 document.body.addEventListener('keydown', keyHandler);
 
 search();
+determineColorModeSupport();
+const hex = document.documentElement.dataset.accentColor;
+const colorInput = document.querySelector('.i-color');
+colorInput.value = hex;
+colorInput.addEventListener('change', generateColorPalette);

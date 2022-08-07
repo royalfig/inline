@@ -37,6 +37,12 @@
       document.querySelector('.i-menu').classList.toggle('i-show');
       document.body.classList.toggle('no-scroll');
     }
+
+    if (target.closest('.i-mode-button')) {
+      const { pref } = target.closest('.i-mode-button').dataset;
+      document.documentElement.dataset.colorPref = pref;
+      localStorage.setItem('pref', pref);
+    }
   }
 
   function launchSearch() {
@@ -2090,14 +2096,33 @@
 
   function resultTemplate(results) {
     return results
-      .map(({ title, url, primary_tag, excerpt }) => {
+      .map(({ title, url, primary_tag, excerpt, score }) => {
         return `<div class="i-search-result">
-      <p class="i-search-tag">${primary_tag?.name}</p>
+      <div class="i-search-tags flex-row">
+        <p class="i-search-tag">${
+          primary_tag?.name
+        }</p><span class="i-search-score" style="width: ${
+        (score / results[0].score) * 100
+      }%"></span>
+      </div>
         <p><a href="${url}">${title}</a> </p>
         <p class="i-search-excerpt">${excerpt}</p>
               </div>`;
       })
       .join('');
+  }
+
+  function determineColorModeSupport() {
+    const colorPrefButtons = document.querySelectorAll('.i-mode-button');
+
+    const hasSupport = window.CSS && CSS.supports('color', 'var(--primary)');
+
+    // If the browser doesn't support custom settings, hide buttons
+    if (!hasSupport) {
+      colorPrefButtons.forEach((e) => {
+        e.style.display = 'none';
+      });
+    }
   }
 
   // LiveReload server
@@ -2115,6 +2140,11 @@
   document.body.addEventListener('keydown', keyHandler);
 
   search();
+  determineColorModeSupport();
+  const hex = document.documentElement.dataset.accentColor;
+  const colorInput = document.querySelector('.i-color');
+  colorInput.value = hex;
+  colorInput.addEventListener('change', generateColorPalette);
 
 })();
 //# sourceMappingURL=app.js.map

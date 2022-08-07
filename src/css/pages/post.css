@@ -1,7 +1,7 @@
 /* Header */
 .i-post-header {
   position: relative;
-  height: 90vh;
+  height: 95vh;
   --inline: 8vw;
 }
 
@@ -53,12 +53,14 @@
   max-width: 60ch;
   padding-inline-start: var(--inline);
   align-self: flex-end;
+  margin-block-start: 1rem;
 }
 
 .i-post-header h1 {
   /* font-size: var(--h2); */
   line-height: 1.1;
   text-transform: uppercase;
+  color: var(--tag);
 }
 
 .i-post-header-meta {
@@ -94,9 +96,10 @@
   line-height: 1;
 }
 
-.i-icon > svg {
+.i-icon svg {
   width: 100%;
   height: 100%;
+  color: var(--tag);
 }
 
 .i-copy-button .copied {
@@ -127,6 +130,11 @@
 
 .i-post-header-caption-text {
   display: none;
+}
+
+.i-post-header-caption-text,
+.i-post-header-caption-text a {
+  color: var(--tag);
 }
 
 .i-show .i-post-header-caption-text {

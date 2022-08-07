@@ -93,15 +93,6 @@ export default [
     plugins,
   },
   {
-    input: 'src/js/generateColorPalette.js',
-    output: {
-      file: 'assets/built/generateColorPalette.js',
-      format: 'iife',
-      sourcemap: true,
-    },
-    plugins,
-  },
-  {
     input: 'src/js/syntax-highlighting.js',
     output: {
       file: 'assets/built/syntax-highlighting.js',
