@@ -12,7 +12,6 @@
             {{> "navbar"}}
             {{> "search"}}
         
-        
         <div class="i-post-header-text">
             <h1>{{title}}</h1>
             <p>{{custom_excerpt}}</p>
@@ -64,10 +63,25 @@
 
 </header>
 
-<main class="i-post-container-grid">
-    <article class="{{post_class}} i-post-grid">
-        {{content}}
-    </article>
-</main>
+<div class="i-post-container">
+    <main class="i-post-container-grid" id="i-main">
+        <article class="{{post_class}} i-post-grid">
+            {{content}}
+        </article>
+    </main>
+    
+    {{#get "posts" limit="3" include="tags" filter="tags:[{{tags.[*].slug}}]+id:-{{id}}" as |related|}}
+    {{#if related}}
+    <section class="i-related-grid">
+        <h2>Read some more</h2>
+        {{#foreach related}}
+            {{> "line-card"}}
+        {{/foreach}}
+    </section>
+    {{/if}}
+    {{/get}}
+    {{> "footer"}}
+</div>
 
 {{/post}}
+

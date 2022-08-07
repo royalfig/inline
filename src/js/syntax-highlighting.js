@@ -16,12 +16,12 @@ hljs.registerLanguage('handlebars', handlebars);
 hljs.registerLanguage('json', json);
 
 hljs.addPlugin({
-    'after:highlightElement': ({ el, result }) => {
-        const span = document.createElement('span')
-        span.textContent = result.language;
-        span.setAttribute('style', 'position:absolute;right:1em;top:0')
-        el.prepend(span)
-    }
-})
+  'after:highlightElement': ({ el, result }) => {
+    const span = document.createElement('span');
+    span.textContent = result.language;
+    span.setAttribute('class', 'i-language');
+    el.prepend(span);
+  },
+});
 
 hljs.highlightAll();

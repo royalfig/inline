@@ -1,6 +1,7 @@
 .i-nav-flex {
   justify-content: space-between;
   color: var(--white);
+  padding: 1rem;
 }
 
 .i-nav-flex button {

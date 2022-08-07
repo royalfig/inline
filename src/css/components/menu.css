@@ -60,20 +60,30 @@
   color: var(--element);
   text-transform: uppercase;
   padding: var(--button-padding);
+  font-weight: 700;
+  margin-block: var(--gap);
   background-color: hsla(
     var(--primary-h),
     var(--saturation),
     var(--lightness),
     0.25
   );
-  color: hsl(var(--primary-h), var(--saturation), 90%);
+  color: hsl(var(--primary-h), var(--saturation), 10%);
+}
 
-  margin-block: var(--gap);
+[data-color-pref='dark'] .i-mode-button {
+  color: hsl(var(--primary-h), var(--saturation), 90%);
 }
 
 .i-mode-button:hover,
 .i-mode-button:focus-visible {
-  color: hsl(var(--primary-h), var(--saturation), 100%);
+  color: var(--element);
+  background-color: hsla(
+    var(--complementary-color),
+    var(--saturation),
+    var(--lightness),
+    0.25
+  );
 }
 
 .i-mode-button svg {
@@ -103,6 +113,7 @@
   bottom: 2rem;
   background: var(--secondary);
   cursor: pointer;
+  border: none;
 }
 
 ::-webkit-color-swatch {

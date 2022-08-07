@@ -1,9 +1,14 @@
 /* These styles are required by Ghost 👻 and apply to editor cards. These styles are derived from Ghost defaults: https://ghost.org/docs/themes/content/ */
 
 /* Image Card */
+.kg-image-card {
+  margin-block: 3rem;
+}
+
 .kg-image-card img {
   max-width: 100%;
   height: auto;
+  display: block;
 }
 
 /* By using CSS grid, you can have an elegant solution to accomodate wide/full image cards and other embeds */
@@ -18,16 +23,6 @@
 /* Gallery */
 .kg-gallery-card {
   grid-column: 1 / -1;
-}
-
-.kg-gallery-card,
-.kg-gallery-card * {
-  box-sizing: border-box;
-}
-
-.kg-gallery-card,
-.kg-image-card {
-  --gap: 1.2rem;
 }
 
 .kg-image-card:not(.kg-card-hascaption) + .kg-image-card,
@@ -67,120 +62,4 @@
   .kg-image-card {
     --gap: 0.6rem;
   }
-}
-
-/* Bookmark Card */
-.kg-bookmark-card,
-.kg-bookmark-card * {
-  box-sizing: border-box;
-}
-
-.kg-bookmark-card,
-.kg-bookmark-publisher {
-  position: relative;
-  width: 100%;
-}
-
-.kg-bookmark-card a.kg-bookmark-container,
-.kg-bookmark-card a.kg-bookmark-container:hover {
-  display: flex;
-  overflow: hidden;
-  color: inherit;
-  text-decoration: none;
-  border: 1px solid rgb(124 139 154 / 25%);
-  border-radius: 3px;
-}
-
-.kg-bookmark-content {
-  display: flex;
-  flex-basis: 100%;
-  flex-direction: column;
-  flex-grow: 1;
-  align-items: flex-start;
-  justify-content: flex-start;
-  padding: 20px;
-  overflow: hidden;
-}
-
-.kg-bookmark-title {
-  font-size: 1.5rem;
-  font-weight: 600;
-  line-height: 1.4em;
-}
-
-.kg-bookmark-description {
-  display: box;
-  max-height: 44px;
-  margin-top: 3px;
-  overflow-y: hidden;
-  font-size: 1.4rem;
-  font-weight: 400;
-  line-height: 1.5em;
-  opacity: 0.7;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-}
-
-.kg-bookmark-metadata {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  margin-top: 22px;
-  font-size: 1.4rem;
-  font-weight: 500;
-  white-space: nowrap;
-}
-
-.kg-bookmark-metadata > *:not(img) {
-  opacity: 0.7;
-}
-
-.kg-bookmark-icon {
-  width: 20px;
-  height: 20px;
-  margin-right: 6px;
-}
-
-.kg-bookmark-author,
-.kg-bookmark-publisher {
-  display: inline;
-}
-
-.kg-bookmark-publisher {
-  display: block;
-  max-width: 240px;
-  overflow: hidden;
-  line-height: 1.65em;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.kg-bookmark-metadata > span:nth-of-type(2) {
-  font-weight: 400;
-}
-
-.kg-bookmark-metadata > span:nth-of-type(2):before {
-  margin: 0 6px;
-  content: '•';
-}
-
-.kg-bookmark-metadata > span:last-of-type {
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.kg-bookmark-thumbnail {
-  position: relative;
-  flex-grow: 1;
-  min-width: 33%;
-}
-
-.kg-bookmark-thumbnail img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 0 2px 2px 0;
-  object-fit: cover;
 }

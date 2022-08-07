@@ -157,6 +157,7 @@
   },
   "dependencies": {
     "highlight.js": "^11.6.0",
+    "medium-zoom": "^1.0.6",
     "minisearch": "^5.0.0"
   }
 }

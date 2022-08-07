@@ -1,16 +1,24 @@
 import MiniSearch from 'minisearch';
 
 async function getPosts() {
-  // TODO ERROR HANDLING
-  const res = await fetch(
-    'http://localhost:2368/ghost/api/content/posts/?key=a095332ca4856aab5549f1a277&limit=all&include=authors,tags&formats=plaintext',
-  );
-  const { posts } = await res.json();
-  return posts;
+  console.log('fetchings');
+  try {
+    const res = await fetch(
+      'http://localhost:2368/ghost/api/content/posts/?key=a095332ca4856aab5549f1a277&limit=all&include=authors,tags&formats=plaintext',
+    );
+
+    if (!res.ok) {
+      throw Error(res.statusText);
+    }
+    const { posts } = await res.json();
+    return posts;
+  } catch (e) {
+    throw Error(e);
+  }
 }
 
 export default async function search() {
-  let posts = await getPosts();
+  let posts = await cache();
 
   let miniSearch = new MiniSearch({
     fields: ['title', 'plaintext'], // fields to index for full-text search
@@ -50,4 +58,19 @@ function resultTemplate(results) {
               </div>`;
     })
     .join('');
+}
+
+async function cache() {
+  const timestamp = Number.parseInt(localStorage.getItem('timestamp'));
+
+  const isOutdatd = Date.now() - new Date(timestamp) > 24 * 60 * 60 * 1000;
+
+  if (isOutdatd || !timestamp) {
+    const posts = await getPosts();
+    localStorage.setItem('timestamp', Date.now());
+    localStorage.setItem('posts', JSON.stringify(posts));
+    return posts;
+  }
+
+  return JSON.parse(localStorage.getItem('posts'));
 }

@@ -1,20 +1,16 @@
 /* Color scheme */
 :root[data-color-pref='light'] {
   --primary: hsl(var(--primary-h) var(--saturation) var(--lightness));
-  --primary-light: hsl(
-    var(--primary-h) var(--saturation) calc(var(--lightness) * 1.5)
-  );
-  --primary-dark: hsl(
-    var(--primary-h) var(--saturation) calc(var(--lightness) * 0.5)
-  );
+  --primary-light: hsl(var(--primary-h) var(--saturation) var(--lightness));
+  --primary-dark: hsl(var(--primary-h) var(--saturation) var(--lightness));
   --secondary: hsl(
     var(--complementary-color) var(--saturation) var(--lightness)
   );
   --secondary-light: hsl(
-    var(--complementary-color) var(--saturation) calc(var(--lightness) * 1.5)
+    var(--complementary-color) var(--saturation) var(--lightness)
   );
   --secondary-dark: hsl(
-    var(--complementary-color) var(--saturation) calc(var(--lightness) * 0.5)
+    var(--complementary-color) var(--saturation) var(--lightness)
   );
 
   --surface: hsl(var(--primary-h) 5% 98%);
@@ -38,43 +34,6 @@
     0 5.4px 17.9px hsla(var(--primary-h) var(--saturation) 9% / 0.042),
     0 10px 33.4px hsla(var(--primary-h) var(--saturation) 9% / 0.05),
     0 24px 80px hsla(var(--primary-h) var(--saturation) 9% / 0.07);
-
-  --gradient-bg: var(--primary);
-  --mesh-gradient: radial-gradient(
-      at 40% 20%,
-      hsla(var(--primary-h), 100%, 74%, 1) 0,
-      transparent 50%
-    ),
-    radial-gradient(
-      at 80% 0%,
-      hsla(calc(var(--primary-h) - 10), 100%, 56%, 1) 0,
-      transparent 50%
-    ),
-    radial-gradient(
-      at 0% 50%,
-      hsla(var(--complementary-color), 100%, 93%, 1) 0,
-      transparent 50%
-    ),
-    radial-gradient(
-      at 80% 50%,
-      hsla(calc(var(--complementary-color) + 10), 100%, 76%, 1) 0,
-      transparent 50%
-    ),
-    radial-gradient(
-      at 0% 100%,
-      hsla(calc(var(--complementary-color) - 10), 100%, 77%, 1) 0,
-      transparent 50%
-    ),
-    radial-gradient(
-      at 80% 100%,
-      hsla(calc(var(--primary-h) - 20), 100%, 70%, 1) 0,
-      transparent 50%
-    ),
-    radial-gradient(
-      at 0% 0%,
-      hsla(calc(var(--primary-h) - 10), 100%, 76%, 1) 0,
-      transparent 50%
-    );
 }
 
 :root[data-color-pref='dark'] {
@@ -121,67 +80,42 @@
     0 5.4px 17.9px hsla(var(--primary-h) var(--saturation) 1% / 0.062),
     0 10px 33.4px hsla(var(--primary-h) var(--saturation) 1% / 0.07),
     0 24px 80px hsla(var(--primary-h) var(--saturation) 1% / 0.09);
-
-  --gradient-bg: var(--primary);
-  --mesh-gradient: radial-gradient(
-      at 40% 20%,
-      hsla(var(--primary-h), 100%, 74%, 1) 0,
-      transparent 50%
-    ),
-    radial-gradient(
-      at 80% 0%,
-      hsla(calc(var(--primary-h) - 10), 100%, 56%, 1) 0,
-      transparent 50%
-    ),
-    radial-gradient(
-      at 0% 50%,
-      hsla(var(--complementary-color), 100%, 93%, 1) 0,
-      transparent 50%
-    ),
-    radial-gradient(
-      at 80% 50%,
-      hsla(calc(var(--complementary-color) + 10), 100%, 76%, 1) 0,
-      transparent 50%
-    ),
-    radial-gradient(
-      at 0% 100%,
-      hsla(calc(var(--complementary-color) - 10), 100%, 77%, 1) 0,
-      transparent 50%
-    ),
-    radial-gradient(
-      at 80% 100%,
-      hsla(calc(var(--primary-h) - 20), 100%, 70%, 1) 0,
-      transparent 50%
-    ),
-    radial-gradient(
-      at 0% 0%,
-      hsla(calc(var(--primary-h) - 10), 100%, 76%, 1) 0,
-      transparent 50%
-    );
 }
 
 /* webdev, things, ghost, travel, academic, words */
 
 .tag-web-dev {
-  --tag: hsl(calc(var(--complementary-color) + 70), var(--saturation), 80%);
+  --tag: hsl(
+    calc(min(var(--complementary-color) + 30, 360)),
+    var(--saturation),
+    80%
+  );
+}
+
+.tag-academic {
+  --tag: hsl(
+    calc(max(var(--complementary-color) - 30, 1)),
+    var(--saturation),
+    80%
+  );
+}
+
+.tag-travel {
+  --tag: hsl(
+    calc(min(var(--complementary-color) + 120, 360)),
+    var(--saturation),
+    80%
+  );
 }
 
 .tag-ghost-tag {
-  --tag: hsl(calc(var(--primary-h) + 20), var(--saturation), 80%);
+  --tag: hsl(calc(min(var(--primary-h) + 30, 360)), var(--saturation), 80%);
 }
 
 .tag-things {
-  --tag: hsl(calc(var(--primary-h) + 70), var(--saturation), 80%);
+  --tag: hsl(calc(max(var(--primary-h) - 30, 1)), var(--saturation), 80%);
 }
 
 .tag-words {
-  --tag: hsl(calc(var(--primary-h) - 70), var(--saturation), 80%);
-}
-
-.tag-academic {
-  --tag: hsl(calc(var(--complementary-color) - 70), var(--saturation), 80%);
-}
-
-.tag-academic {
-  --tag: hsl(calc(var(--complementary-color) * 0.25), var(--saturation), 80%);
+  --tag: hsl(calc(min(var(--primary-h) + 120, 360)), var(--saturation), 80%);
 }

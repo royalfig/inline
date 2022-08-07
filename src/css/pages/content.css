@@ -9,3 +9,56 @@
   padding-inline-start: 1rem;
   list-style-position: inside;
 }
+
+.post hr {
+  height: 1px;
+  background-color: var(--border-color);
+  border: none;
+}
+
+/* Table */
+
+.post table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-block: 3rem;
+}
+
+.post tbody tr {
+  border-top: 1px solid var(--border-color);
+}
+
+.post tbody tr:last-child {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.post tbody tr:hover {
+  background-color: var(--surface-dark);
+}
+
+.post thead th {
+  padding: 0.5em;
+  font-family: var(--heading-typeface);
+  text-align: left;
+}
+
+.post tbody td {
+  padding: 0.5em;
+  font-size: var(--small);
+}
+
+/* Caption */
+.post figcaption {
+  font-size: var(--small);
+  text-align: center;
+  text-transform: uppercase;
+  padding: 0.5em;
+}
+
+/* Syntax highlighting */
+.post .i-language {
+  position: absolute;
+  right: 4px;
+  font-size: var(--x-small);
+  top: 0;
+}

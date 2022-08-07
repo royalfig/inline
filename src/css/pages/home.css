@@ -1,12 +1,7 @@
-.home-template {
-  padding: 1rem;
-}
-
 .i-home-section {
   padding: 3rem 2rem;
   margin-inline: auto;
-  max-width: calc(100% - 4rem);
-  min-height: 90vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -16,6 +11,18 @@
   --bg-secondary-1: hsl(var(--complementary-color), 50%, 10%);
   --bg-secondary-2: hsl(var(--complementary-color), 50%, 10%);
   --bg-tertiary-1: hsl(calc(var(--primary-h) + 300), 50%, 10%);
+}
+
+@media (--tablet) {
+}
+
+@media (--laptop) {
+  .home-template {
+    padding: 0 1rem 1rem;
+  }
+  .i-home-section {
+    max-width: calc(100% - 4rem);
+  }
 }
 
 .i-home-section:nth-of-type(2) {
@@ -38,10 +45,8 @@
 .i-hero {
   --inline: 12vw;
   position: relative;
-
-  height: 90vh;
+  min-height: calc(100vh - 3.6rem);
   padding-bottom: 5rem;
-  margin-block-start: 1rem;
   overflow: hidden;
   background-color: var(--bg-primary-1);
   padding: 0;
@@ -102,10 +107,12 @@
 }
 
 .i-hero-grid-cards {
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--gap);
-  margin-inline: var(--inline);
+  grid-template-columns: repeat(3, minmax(160px, 18rem));
+  gap: 3rem 2rem;
+  padding-inline: var(--inline);
   margin-block-end: 3rem;
+  align-self: flex-start;
+  width: 100%;
 }
 
 /* Poodle */
@@ -260,6 +267,12 @@
   top: 50%;
   left: 0.5em;
   transform: translateY(-50%);
+  line-height: 1;
+}
+
+.i-cta-icon svg {
+  height: 100%;
+  width: 100%;
 }
 
 /* form states */
@@ -299,4 +312,36 @@
 }
 
 .i-cta button:focus {
+}
+
+.i-mail-success,
+.i-mail-error,
+.i-mail-loading {
+  display: none;
+}
+
+.success .i-mail-success,
+.error .i-mail-error,
+.loading .i-mail-loading {
+  display: initial;
+}
+
+.success .i-mail-default,
+.error .i-mail-default,
+.loading .i-mail-default {
+  display: none;
+}
+
+.i-mail-loading {
+  animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+.loading button {
+  pointer-events: none;
 }
