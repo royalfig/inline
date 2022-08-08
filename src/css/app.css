@@ -21,6 +21,7 @@
 @import './pages/content.css';
 
 /* Components */
+@import './components/hero.css';
 @import './components/card.css';
 @import './components/toc.css';
 @import './components/menu.css';

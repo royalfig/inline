@@ -102,7 +102,7 @@
 
 .tag-travel {
   --tag: hsl(
-    calc(min(var(--complementary-color) + 120, 360)),
+    calc(min(var(--complementary-color) + 240, 360)),
     var(--saturation),
     80%
   );

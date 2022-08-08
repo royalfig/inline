@@ -2,12 +2,12 @@
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 1000;
+  display: none;
   width: 100%;
   height: 100vh;
-  display: none;
-  z-index: 1000;
-  background-color: var(--surface);
   overflow-y: auto;
+  background-color: var(--surface);
   padding-block-end: 3rem;
 }
 
@@ -28,13 +28,13 @@
 }
 
 .i-search-input {
-  background-color: transparent;
-  font-family: inherit;
-  line-height: inherit;
-  font-size: var(--h4);
-  color: var(--element);
-  border: none;
   width: 100%;
+  font-family: inherit;
+  font-size: var(--h4);
+  line-height: inherit;
+  color: var(--element);
+  background-color: transparent;
+  border: none;
   border-bottom: 1px solid var(--element);
 }
 
@@ -62,8 +62,8 @@
 }
 
 .i-search-result a {
-  text-decoration: none;
   color: var(--primary);
+  text-decoration: none;
 }
 
 .i-search-result a:hover,
@@ -72,10 +72,10 @@
 }
 
 .i-search-excerpt {
-  color: var(--element);
   font-size: var(--small);
   font-weight: normal;
   line-height: 1.6;
+  color: var(--element);
 }
 
 .i-search-tags {
@@ -89,11 +89,11 @@
 }
 
 .i-search-tag {
+  display: inline-block;
+  padding: var(--button-padding);
   font-size: var(--x-small);
   color: var(--surface);
   text-transform: uppercase;
-  background: var(--element);
-  padding: var(--button-padding);
-  display: inline-block;
   white-space: nowrap;
+  background: var(--element);
 }

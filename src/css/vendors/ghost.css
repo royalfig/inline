@@ -1,14 +1,14 @@
 /* These styles are required by Ghost 👻 and apply to editor cards. These styles are derived from Ghost defaults: https://ghost.org/docs/themes/content/ */
 
 /* Image Card */
-.kg-image-card {
+.kg-card {
   margin-block: 3rem;
 }
 
 .kg-image-card img {
+  display: block;
   max-width: 100%;
   height: auto;
-  display: block;
 }
 
 /* By using CSS grid, you can have an elegant solution to accomodate wide/full image cards and other embeds */

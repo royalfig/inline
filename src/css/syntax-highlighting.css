@@ -1,15 +1,15 @@
 @import '../../node_modules/highlight.js/styles/github-dark.css';
 
 .kg-card.kg-code-card {
-  font-size: var(--small);
   position: relative;
+  font-size: var(--small);
 }
 
 .post code:not([class*='language']) {
-  background-color: hsla(var(--primary-h), var(--saturation), 90%, 0.5);
   padding: 0 0.25em;
-  white-space: nowrap;
   color: var(--primary);
+  white-space: nowrap;
+  background-color: hsla(var(--primary-h), var(--saturation), 90%, 0.5);
 }
 
 [data-color-pref='dark'] .post code:not([class*='language']) {

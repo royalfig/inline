@@ -12,9 +12,9 @@
   padding: 1rem;
 }
 .kg-bookmark-description {
+  max-height: none;
   font-size: var(--x-small);
   color: var(--element-light);
-  max-height: none;
 }
 .kg-bookmark-metadata {
   font-size: var(--small);
@@ -23,17 +23,17 @@
   border-color: var(--primary);
 }
 .kg-blockquote-alt {
-  font-size: var(--h1);
-  font-family: var(--heading-typeface);
-  margin-block: 3rem;
-  line-height: 1.3;
   padding: 0;
-  grid-column: 2 / 5;
-  background: var(--element);
-  color: var(--surface);
   padding: 2rem;
+  font-family: var(--heading-typeface);
+  font-size: var(--h1);
+  line-height: 1.3;
+  color: var(--surface);
+  background: var(--element);
   box-shadow: 0.25em 0.25em 0 5px var(--primary);
   transform: translate(-0.25em, -0.25em);
+  margin-block: 3rem;
+  grid-column: 2 / 5;
 }
 
 /*# sourceMappingURL=ghost-cards.css.map */

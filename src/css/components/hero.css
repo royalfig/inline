@@ -1,0 +1,114 @@
+/* Hero */
+.i-hero {
+  --inline: 12vw;
+  position: relative;
+  min-height: calc(90vh - 3.6rem);
+  padding: 0;
+  padding-block: 5rem;
+  overflow: hidden;
+  background-color: var(--bg-primary-1);
+}
+
+.i-hero-grid-flex {
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.i-hero-inner-border {
+  position: absolute;
+  top: 1.5rem;
+  left: 50%;
+  display: none;
+  width: calc(100% - 3rem);
+  height: calc(100% - 6rem);
+  pointer-events: none;
+  border-color: hsl(var(--complementary-color), 70%, 80%);
+  border-style: solid;
+  border-width: 1rem 1rem 0;
+  transform: translateX(-50%);
+}
+
+.i-hero-grid {
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+  margin-block: 3rem;
+  gap: 3rem;
+}
+
+.i-hero-img-wrapper {
+  position: relative;
+  transform: translateY(-1rem);
+}
+
+.i-hero-img {
+  object-fit: cover;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.i-hero-content-container {
+  max-width: 69rem;
+  margin-inline: auto;
+}
+
+.i-hero-text {
+  padding: 0 1rem;
+  font-size: 1.15rem;
+  color: var(--white);
+}
+
+.i-hero-text p:first-of-type {
+  font-family: var(--heading-typeface);
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing);
+}
+
+.i-hero-text p:not(:first-child) {
+  margin-block-start: 1rem;
+}
+
+.i-hero-grid-cards {
+  grid-template-columns: repeat(1, minmax(160px, 18rem));
+  gap: 3rem 2rem;
+  margin-block-end: 3rem;
+  width: 100%;
+  padding: 0 1rem;
+}
+
+@media (--phone) {
+  .i-hero-grid-cards {
+    align-self: flex-start;
+    grid-template-columns: repeat(2, minmax(160px, 18rem));
+  }
+}
+
+@media (--tablet) {
+  .i-hero-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+
+  .i-hero-inner-border {
+    display: initial;
+  }
+
+  .i-hero-text {
+    margin-inline-start: var(--inline);
+    padding: 0;
+  }
+
+  .i-hero-img-wrapper {
+  }
+
+  .i-hero-img-wrapper::after {
+    display: none;
+  }
+
+  .i-hero-grid-cards {
+    grid-template-columns: repeat(3, minmax(160px, 18rem));
+    padding-inline: var(--inline);
+  }
+}

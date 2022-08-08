@@ -49,16 +49,16 @@
 
 /* Caption */
 .post figcaption {
+  padding: 0.5em;
   font-size: var(--small);
   text-align: center;
   text-transform: uppercase;
-  padding: 0.5em;
 }
 
 /* Syntax highlighting */
 .post .i-language {
   position: absolute;
+  top: 0;
   right: 4px;
   font-size: var(--x-small);
-  top: 0;
 }

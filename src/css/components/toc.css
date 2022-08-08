@@ -3,15 +3,15 @@ summary:hover {
 }
 
 .i-toc-content strong {
-  text-transform: uppercase;
   font-family: var(--heading-typeface);
   font-size: var(--small);
+  text-transform: uppercase;
   letter-spacing: var(--letter-spacing);
 }
 
 .i-toc-content a {
-  text-decoration: none;
   color: inherit;
+  text-decoration: none;
 }
 
 [class^='i-toc-h'] {
@@ -23,31 +23,31 @@ summary:hover {
 }
 
 .i-toc-h2::before {
+  color: inherit;
   content: '\002015';
   margin-inline-end: 0.5em;
-  color: inherit;
 }
 
 .i-toc-h3::before {
+  color: inherit;
   content: '\002015\002015';
   margin-inline-end: 0.5em;
-  color: inherit;
 }
 
 .i-toc-h4::before {
+  color: inherit;
   content: '\002015\002015\002015';
   margin-inline-end: 0.5em;
-  color: inherit;
 }
 
 .i-toc-h5::before {
+  color: inherit;
   content: '\002015\002015\002015\002015';
   margin-inline-end: 0.5em;
-  color: inherit;
 }
 
 .i-toc-h6::before {
+  color: inherit;
   content: '\002015\002015\002015\002015\002015';
   margin-inline-end: 0.5em;
-  color: inherit;
 }

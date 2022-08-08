@@ -1,0 +1,25 @@
+<section class="i-hero i-home-section">
+    <div class="i-hero-grid-flex">
+        <div class="i-hero-grid">
+            <div class="i-hero-text">
+                <p>Hello, I'm Ryan.</p>
+                <p>I'm a Developer Experience Engineer at the open source, publishing platform <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a></p>
+                <p>I love building websites and apps with <span class="i-js">JavaScript</span> and sharing what I learn</p
+                >
+                <p><a href="#/portal/subscribe">Subscribe to my newsletter</a> so you don't fall behind and get held back or just check out some of my favorite writing &rarr;</p>
+            </div>
+            <div class="i-hero-img-wrapper">
+                <img class="i-hero-img" src="{{img_url @site.cover_image}}" alt="">
+            </div>
+        </div>
+        <div class="i-hero-grid-cards">
+            {{#get "posts" filter="featured:true" include="tags" limit="3" as |featured|}}
+            {{#foreach featured}}
+                {{> "line-card"}}
+            {{/foreach}}
+            {{/get}}
+        </div>
+    </div>
+    <div class="i-hero-inner-border">
+    </div>
+</section>
