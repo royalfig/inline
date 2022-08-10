@@ -4,9 +4,17 @@
   position: relative;
   min-height: calc(90vh - 3.6rem);
   padding: 0;
-  padding-block: 5rem;
+  padding-block: 2rem;
   overflow: hidden;
   background-color: var(--bg-primary-1);
+  margin-block-start: 0;
+}
+
+@media (--laptop) {
+  .i-hero {
+    margin-block-start: 1rem;
+    padding-block: 4rem;
+  }
 }
 
 .i-hero-grid-flex {
@@ -38,7 +46,7 @@
 
 .i-hero-img-wrapper {
   position: relative;
-  transform: translateY(-1rem);
+  max-height: 25rem;
 }
 
 .i-hero-img {
@@ -54,16 +62,17 @@
 }
 
 .i-hero-text {
-  padding: 0 1rem;
+  padding: 0 2rem;
   font-size: 1.15rem;
   color: var(--white);
 }
 
 .i-hero-text p:first-of-type {
   font-family: var(--heading-typeface);
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   text-transform: uppercase;
   letter-spacing: var(--letter-spacing);
+  line-height: 1.1;
 }
 
 .i-hero-text p:not(:first-child) {
@@ -71,26 +80,35 @@
 }
 
 .i-hero-grid-cards {
-  grid-template-columns: repeat(1, minmax(160px, 18rem));
+  grid-template-columns: repeat(1, minmax(10rem, 1fr));
   gap: 3rem 2rem;
   margin-block-end: 3rem;
   width: 100%;
-  padding: 0 1rem;
+  padding: 0 2rem;
 }
 
 @media (--phone) {
   .i-hero-grid-cards {
     align-self: flex-start;
-    grid-template-columns: repeat(2, minmax(160px, 18rem));
+    grid-template-columns: repeat(2, minmax(10rem, 12rem));
+  }
+
+  .i-hero-grid-cards > :last-child {
+    grid-column: 1 / -1;
   }
 }
 
 @media (--tablet) {
-  .i-hero-grid {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
+  .i-hero-grid-cards {
+    grid-template-columns: repeat(3, minmax(10rem, 12rem));
   }
 
+  .i-hero-grid-cards > :last-child {
+    grid-column: initial;
+  }
+}
+
+@media (--laptop) {
   .i-hero-inner-border {
     display: initial;
   }
@@ -100,15 +118,16 @@
     padding: 0;
   }
 
-  .i-hero-img-wrapper {
-  }
-
-  .i-hero-img-wrapper::after {
-    display: none;
+  .i-hero-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
   }
 
   .i-hero-grid-cards {
-    grid-template-columns: repeat(3, minmax(160px, 18rem));
     padding-inline: var(--inline);
+  }
+
+  .i-hero-img-wrapper {
+    transform: translateY(-1rem);
   }
 }

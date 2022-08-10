@@ -13,10 +13,27 @@
   --bg-tertiary-1: hsl(calc(var(--primary-h) + 300), 50%, 10%);
 }
 
+.home-template {
+  padding-bottom: 1rem;
+}
+
+.home-template .i-nav-flex {
+  padding: 1rem;
+}
+
+@media (--tablet) {
+}
+
 @media (--laptop) {
-  .home-template {
-    padding: 0 1rem 1rem;
+  .home-template .i-nav-flex {
+    padding: 0;
   }
+  .home-template {
+    padding: 1rem;
+  }
+}
+
+@media (--desktop) {
   .i-home-section {
     max-width: calc(100% - 4rem);
   }
@@ -39,13 +56,22 @@
 }
 
 /* Poodle */
-.i-poodle {
-  aspect-ratio: 16 / 9;
-  position: relative;
-}
 
-.i-home-section.i-poodle {
-  min-height: auto;
+.i-poodle {
+  position: relative;
+  padding: 3rem 0;
+  z-index: 1;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  font-family: var(--heading-typeface);
+  font-size: var(--h2);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--white);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing);
 }
 
 .i-poodle::after {
@@ -60,28 +86,13 @@
 }
 
 .i-poodle video {
-  position: absolute;
-  top: 0;
-  left: 0;
+  aspect-ratio: 16 / 9;
   width: 100%;
-  height: 100%;
+  margin-block: 3rem;
 }
 
-.i-poodle-flex {
-  position: relative;
-  position: relative;
-  z-index: 1;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-  font-family: var(--heading-typeface);
-  font-size: var(--h2);
-  font-weight: 700;
-  line-height: 1.2;
-  color: var(--white);
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: var(--letter-spacing);
+.i-poodle p {
+  padding: 0 1rem;
 }
 
 .i-poodle-top p + p {
@@ -99,16 +110,18 @@
 /* Cards */
 .i-home-cards-grid {
   justify-content: center;
-  column-gap: var(--gap);
-  grid-template-columns: repeat(3, minmax(10rem, 12rem));
-  row-gap: 3rem;
+  gap: var(--gap);
+  grid-template-columns: repeat(2, minmax(10rem, 14rem));
+}
+
+@media (--tablet) {
+  .i-home-cards-grid {
+    grid-template-columns: repeat(3, minmax(10rem, 12rem));
+  }
 }
 
 .i-home-cards {
   overflow: hidden;
-}
-
-.i-home-cards-bg-2 {
 }
 
 .i-home-cards-title-flex {
@@ -129,16 +142,6 @@
   text-transform: uppercase;
 }
 
-/* 
-.i-home-cards-title::before {
-    border-bottom: 1px solid;
-    width: 100vw;
-    height: 2px;
-    content: "";
-    position: absolute;
-    left: 0;
-} */
-
 /* CTA */
 .i-cta {
   background-color: hsl(var(--complementary-color), 50%, 90%);
@@ -149,6 +152,7 @@
 }
 
 .i-cta p {
+  font-size: 1.15rem;
   max-width: 50ch;
   margin-inline: auto;
 }

@@ -1,28 +1,27 @@
 {{!-- Put this into default.hbs --}}
 {{!< default}}
 
-<section class="grid">
-    <header>
-        <h1>{{@site.title}}</h1>
-        <p>{{@site.description}}</p>
-    </header>
+{{!-- Navbar partial --}}
+{{> "navbar"}}
+{{> "search"}}
 
-    {{#foreach posts}}
+<main class="i-home-cards i-home-section">
+    <h2 class="i-home-cards-title">{{#tag}}{{name}}{{/tag}}</h2>
+    <div class="i-home-cards-grid">
+            {{#foreach posts from="1" to="6"}}
+                {{> "picture-card"}}
+            {{/foreach}}
+    </div>
+    
+    
+    
+    <div class="i-home-cards-grid">
+            {{#foreach posts from="7" to="12"}}
+                {{> "line-card"}}
+        {{/foreach}}
+    </div>
+</main>
 
-        <article>
-            {{#if feature_image}}
-                <div>
-                    <img src="{{img_url feature_image size="m"}}" alt=""> 
-                </div>
-            {{/if}}
-            <div>
-                <h2><a href="{{url}}">{{title}}</a></h2>
-                <p>{{authors}} &bull; {{date published_at timeago="true"}} &bull; {{tags}}</p>
-                <p>{{excerpt}}</p>
-            </div>
-        </article>
+{{pagination}}
 
-    {{/foreach}}
-
-    {{pagination}}
-</section>
+{{> "footer"}}
