@@ -1,0 +1,20 @@
+{{#match pages '>' 1}}
+  <nav class='i-pagination flex-row'>
+    {{#if prev}}
+      <a class='i-newer-posts' href='{{page_url prev}}'>&larr; Previous</a>
+    {{/if}}
+    <div
+      class='i-page-number flex-row'
+      data-page='{{page}}'
+      data-pages='{{pages}}'
+      data-slug='{{tag.slug}}'
+    ></div>
+    {{#if next}}
+      <a
+        class='i-older-posts'
+        href='{{page_url next}}
+      '
+      >Next &rarr;</a>
+    {{/if}}
+  </nav>
+{{/match}}

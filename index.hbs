@@ -5,21 +5,27 @@
 {{> "navbar"}}
 {{> "search"}}
 
-<main class="i-home-cards i-home-section">
-    <h2 class="i-home-cards-title">{{#tag}}{{name}}{{/tag}}</h2>
-    <div class="i-home-cards-grid">
+<main id="i-main">
+    
+    <div class="i-home-section">
+        <h1 class="i-home-cards-title">{{#tag}}{{name}}{{/tag}}</h1>
+        <div class="i-home-cards-grid">
             {{#foreach posts from="1" to="6"}}
                 {{> "picture-card"}}
             {{/foreach}}
+        </div>
     </div>
-    
-    
-    
-    <div class="i-home-cards-grid">
+
+{{#match posts.length ">" 6}}
+    <div class="i-home-section">
+        <div class="i-home-cards-grid">
             {{#foreach posts from="7" to="12"}}
                 {{> "line-card"}}
-        {{/foreach}}
+            {{/foreach}}
+        </div>
     </div>
+{{/match}}
+
 </main>
 
 {{pagination}}

@@ -23,3 +23,25 @@ const hex = document.documentElement.dataset.accentColor;
 const colorInput = document.querySelector('.i-color');
 colorInput.value = hex;
 colorInput.addEventListener('change', generateColorPalette);
+
+// Pagination
+const paginationEl = document.querySelector('.i-page-number');
+
+// if (!paginationEl) {
+//   return;
+// }
+
+const { page, pages, slug } = paginationEl.dataset;
+
+let pager = [];
+
+for (let i = 1; i <= Number.parseInt(pages); i++) {
+  pager.push(
+    `<a class="i-number ${
+      i === Number.parseInt(page) ? 'i-current' : ''
+    }" href="/tag/${slug}/${i === 1 ? '' : 'page/' + i + '/'}">${i}</a>`,
+  );
+}
+
+const el = pager.join('');
+paginationEl.innerHTML = el;

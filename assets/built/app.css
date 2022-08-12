@@ -73,18 +73,12 @@
 }
 /* Color scheme */
 :root[data-color-pref='light'] {
-  --primary: hsl(var(--primary-h) var(--saturation) var(--lightness));
-  --primary-light: hsl(var(--primary-h) var(--saturation) var(--lightness));
-  --primary-dark: hsl(var(--primary-h) var(--saturation) var(--lightness));
-  --secondary: hsl(
-    var(--complementary-color) var(--saturation) var(--lightness)
-  );
-  --secondary-light: hsl(
-    var(--complementary-color) var(--saturation) var(--lightness)
-  );
-  --secondary-dark: hsl(
-    var(--complementary-color) var(--saturation) var(--lightness)
-  );
+  --primary: hsl(var(--primary-h) var(--saturation) 50%);
+  --primary-light: hsl(var(--primary-h) var(--saturation) 60%);
+  --primary-dark: hsl(var(--primary-h) var(--saturation) 40%);
+  --secondary: hsl(var(--complementary-color) var(--saturation) 50%);
+  --secondary-light: hsl(var(--complementary-color) var(--saturation) 60%);
+  --secondary-dark: hsl(var(--complementary-color) var(--saturation) 40%);
 
   --surface: hsl(var(--primary-h) 5% 98%);
   --surface-85: hsla(var(--primary-h) 5% 98% / 0.85);
@@ -110,25 +104,13 @@
 }
 :root[data-color-pref='dark'] {
   /* Color */
-  --primary: hsl(
-    var(--primary-h) var(--saturation) calc(var(--lightness) * 1.5)
-  );
-  --primary-light: hsl(
-    var(--primary-h) var(--saturation) calc(var(--lightness) * 1.75)
-  );
-  --primary-dark: hsl(
-    var(--primary-h) var(--saturation) calc(var(--lightness) * 1.15)
-  );
+  --primary: hsl(var(--primary-h) var(--saturation) 70%);
+  --primary-light: hsl(var(--primary-h) var(--saturation) 80%);
+  --primary-dark: hsl(var(--primary-h) var(--saturation) 60%);
 
-  --secondary: hsl(
-    var(--complementary-color) var(--saturation) calc(var(--lightness) * 1.5)
-  );
-  --secondary-light: hsl(
-    var(--complementary-color) var(--saturation) calc(var(--lightness) * 1.75)
-  );
-  --secondary-dark: hsl(
-    var(--complementary-color) var(--saturation) calc(var(--lightness) * 1.15)
-  );
+  --secondary: hsl(var(--complementary-color) var(--saturation) 70%);
+  --secondary-light: hsl(var(--complementary-color) var(--saturation) 80%);
+  --secondary-dark: hsl(var(--complementary-color) var(--saturation) 60%);
 
   --element: hsl(var(--primary-h) 10% 96%);
   --element-light: hsl(var(--primary-h) 10% 100%);
@@ -425,7 +407,6 @@ small {
 }
 /* Poodle */
 .i-poodle {
-  position: relative;
   padding: 3rem 0;
   z-index: 1;
   flex-direction: column;
@@ -440,7 +421,7 @@ small {
   text-transform: uppercase;
   letter-spacing: var(--letter-spacing);
 }
-.i-poodle::after {
+.i-poodle-video-wrapper::after {
   position: absolute;
   top: 0;
   right: 0;
@@ -450,10 +431,15 @@ small {
   background-color: var(--secondary);
   mix-blend-mode: saturation;
 }
-.i-poodle video {
+.i-poodle-video-wrapper {
   aspect-ratio: 16 / 9;
   width: 100%;
   margin-block: 3rem;
+  position: relative;
+}
+.i-poodle-video-wrapper video {
+  width: 100%;
+  height: 100%;
 }
 .i-poodle p {
   padding: 0 1rem;
@@ -497,29 +483,38 @@ small {
   text-align: center;
   text-transform: uppercase;
 }
+.i-home-cards-title a {
+  text-decoration: none;
+  color: inherit;
+}
 /* CTA */
 .i-cta {
   background-color: hsl(var(--complementary-color) 50% 90%);
 }
+.i-cta-wrapper {
+  max-width: var(--content-width);
+  margin-inline: auto;
+}
 .i-cta h2 {
   color: #000;
+  text-align: left;
 }
 .i-cta p {
   font-size: 1.15rem;
-  max-width: 50ch;
-  margin-inline: auto;
 }
 .i-cta p + p {
   -webkit-margin-before: 1em;
           margin-block-start: 1em;
 }
+.i-cta-form {
+  -webkit-margin-before: 3rem;
+          margin-block-start: 3rem;
+  gap: 1rem;
+}
 .i-cta form {
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 50ch;
-  margin-inline: auto;
-  gap: 1rem;
 }
 .i-cta .flex {
   flex-direction: column;
@@ -625,6 +620,15 @@ small {
 }
 .loading button {
   pointer-events: none;
+}
+.tag-template {
+  padding: 1rem;
+}
+.tag-template .i-home-section {
+  min-height: 85vh;
+}
+.tag-template .i-home-section:nth-of-type(2):empty {
+  display: none;
 }
 /* Header */
 .i-post-header {
@@ -1354,6 +1358,40 @@ summary:hover {
   text-transform: uppercase;
   white-space: nowrap;
   background: var(--element);
+}
+.i-pagination {
+  margin-inline: auto;
+  justify-content: center;
+  padding: 3rem 1rem;
+  font-size: var(--small);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing);
+  font-weight: 700;
+  font-family: var(--heading-typeface);
+  align-items: center;
+  line-height: 1;
+}
+.i-pagination a {
+  color: var(--white);
+  text-decoration: none;
+}
+.i-number {
+  border: 1px solid;
+  padding: 0.25em;
+
+  font-feature-settings: "tnum";
+
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+}
+.i-pagination svg {
+  width: 2em;
+  height: 2em;
+  fill: currentColor;
+}
+a.i-current {
+  background-color: var(--white);
+  color: var(--primary);
 }
 /* Vendor */
 /* These styles are required by Ghost 👻 and apply to editor cards. These styles are derived from Ghost defaults: https://ghost.org/docs/themes/content/ */

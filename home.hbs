@@ -24,7 +24,7 @@
         <div class="i-home-cards-grid">
             {{#get "posts" include="tags" filter="tags:web-dev+tags:-css+featured:false" limit="6" as |sites| }}
                 {{#foreach sites}}
-                    {{> "picture-card"}}
+                    {{> "line-card"}}
                 {{/foreach}}
             {{/get}}
         </div>
@@ -36,17 +36,19 @@
             <p>Here's the thing</p>
             <p>Here's the thing</p>
         </div>
-        <video autoplay loop preload muted width="1280">
-        <source src="/assets/video/poodle.mp4"
-            type="video/webm">
-        </video>
+        <figure class="i-poodle-video-wrapper">
+            <video autoplay loop preload muted width="1280" height="720">
+            <source src="/assets/video/poodle.mp4"
+                type="video/mp4">
+            </video>
+        </figure>
         <div class="i-poodle-bottom">
-            <p>Life's nothing without a Mel<br>and an ice cream cone</p>
+            <p>Life's nothing without a Mel<br>&amp; an ice cream cone</p>
         </div>
     </section>
 
     <section class="i-home-cards i-home-section i-home-cards-bg-2">
-            <h2 class="i-home-cards-title">Words on Words</h2>
+            <h2 class="i-home-cards-title"><a href="/tag/words/">Words on Words</a></h2>
         <div class="i-home-cards-grid">
             {{#get "posts" include="tags" filter="tags:words" limit="6" as |sites| }}
                 {{#foreach sites}}
@@ -57,8 +59,8 @@
     </section>
 
     <section class="i-home-section i-cta">
-            <h2 class="i-home-cards-title">It's just epistolary</h2>
-        <div class="flex-column">
+        <div class="i-cta-wrapper flex-column">
+            <h2 class="i-home-cards-title">Let's get epistolary</h2>
             <div class="i-cta-text">
                 <p>It's not a poodle and it's not an ice cream cone, and it's certainly not a Mel with an ice cream cone.</p>
                 <p>But it is a newsletter, written by me, sent to you.</p>
@@ -84,7 +86,7 @@
     </section>
 
     <section class="i-home-cards i-home-section i-home-cards-bg-2">
-            <h2 class="i-home-cards-title">For the Braniacs</h2>
+            <h2 class="i-home-cards-title"><a href="/tag/academic/">For the Braniacs</a></h2>
         <div class="i-home-cards-grid">
             {{#get "posts" include="tags" filter="tags:academic" limit="6" as |sites| }}
                 {{#foreach sites}}

@@ -26,6 +26,7 @@
 @import './components/toc.css';
 @import './components/menu.css';
 @import './components/search.css';
+@import './components/pagination.css';
 
 /* Vendor */
 @import './vendors/ghost.css';
