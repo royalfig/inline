@@ -1,6 +1,14 @@
-<article class="i-picture-card">
-    <a class="i-picture-card-link-flex" href="{{url}}">
-        <img src="{{feature_image}}" alt="">
-        <h3 class="i-picture-card-title">{{title}}</h3>
-    </a>
+<article class='i-picture-card'>
+  <a class='i-picture-card-link-flex' href='{{url}}'>
+
+    <picture class='i-hero-img'>
+      <source
+        srcset='{{img_url feature_image size='m' format='webp'}} 500w'
+        sizes='500px'
+        type='image/webp'
+      />
+      <img src='{{img_url feature_image size='m'}}' alt='' />
+    </picture>
+    <h3 class='i-picture-card-title'>{{title}}</h3>
+  </a>
 </article>

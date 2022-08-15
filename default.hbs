@@ -72,7 +72,6 @@
             }
             
             function generateColorPalette(e) {
-                console.log(e?.target.value, 'ran');
                 const hex = e?.target.value || document.documentElement.dataset.accentColor;
 
                 const [h, s, l] = hexToHSL(hex);
@@ -89,21 +88,23 @@
             
             generateColorPalette()
         </script>
+        <script>
+            const SEARCH_KEY = "{{@custom.search_key}}";
+            const SEARCH_URL = "{{@custom.search_url}}";
+        </script>
 
         {{!-- CSS and JS with asset helper--}}
         <link rel="stylesheet" href="{{asset "built/app.css"}}" />
         <script src="{{asset "built/app.js"}}" defer></script>
-        {{^is "home"}}
-        <link rel="stylesheet" href="{{asset 'built/post.css'}}">
+        
+        {{#is "post,page"}}
+        {{!-- <link rel="stylesheet" href="{{asset 'built/post.css'}}"> --}}
         <script src="{{asset 'built/post.js'}}" defer></script>
+        <link rel="stylesheet" href="{{asset 'built/syntax-highlighting.css'}}">
+        <script src="{{asset 'built/syntax-highlighting.js'}}" defer></script>
+        
         {{/is}}
-
-        {{#if @custom.syntax_highlighting}}
-            {{#is "post"}}
-            <link rel="stylesheet" href="{{asset 'built/syntax-highlighting.css'}}">
-            <script src="{{asset 'built/syntax-highlighting.js'}}" defer></script>
-            {{/is}}
-        {{/if}}
+ 
 
         {{!-- contentFor/block scripts - use with defer --}}
         {{{block "scripts"}}}

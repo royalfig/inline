@@ -4,8 +4,26 @@
 {{#post}}
 
 <header class="i-post-header">
-    <img class="i-post-header-img" src="{{feature_image}}" alt="{{feature_image_alt}}">
-    {{!-- Navbar partial --}}
+
+    <picture class="i-post-header-img">
+        <source 
+            srcset="{{img_url feature_image size="m" format="avif"}} 500w,
+                    {{img_url feature_image size="l" format="avif"}} 700w,
+                    {{img_url feature_image size="xl" format="avif"}} 1000w,
+                    {{img_url feature_image size="xxl" format="avif"}} 2000w"
+            sizes="100vw" 
+            type="image/avif"
+        >
+        <source 
+            srcset="{{img_url feature_image size="m" format="webp"}} 500w,
+                    {{img_url feature_image size="l" format="webp"}} 700w,
+                    {{img_url feature_image size="xl" format="webp"}} 1000w,
+                    {{img_url feature_image size="xxl" format="webp"}} 2000w"
+                    sizes="100vw"
+            type="image/webp"
+        >
+        <img class="i-hero-img" src="{{img_url feature_image size="xxl"}}" alt="{{feature_image_alt}}">
+    </picture>
     
     <div class="i-post-header-grid">
         
@@ -16,7 +34,7 @@
             <h1>{{title}}</h1>
             <p>{{custom_excerpt}}</p>
         </div>
-        
+        {{#is "post"}}
         <div class="i-post-header-meta">
             {{#primary_author}}<p class="i-post-header-meta-author"><a href="{{url}}">By {{name}}</a></p>{{/primary_author}}
             <p class="i-post-header-meta-date">On {{date}}</p>
@@ -40,17 +58,9 @@
                 aria-label="Share on Facebook" target="_blank" rel="noopener noreferrer">
                    <svg viewBox='0 0 24 24' fill='currentColor' aria-hidden='true'><path fill="none" d="M0 0h24v24H0z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z"/></svg>
                 </a>
-                <button class="i-icon i-save">
-                    <span>
-                        <svg viewBox='0 0 24 24' fill='currentColor' aria-hidden='true'><path fill="none" d="M0 0H24V24H0z"/><path d="M16.5 3C19.538 3 22 5.5 22 9c0 7-7.5 11-10 12.5C9.5 20 2 16 2 9c0-3.5 2.5-6 5.5-6C9.36 3 11 4 12 5c1-1 2.64-2 4.5-2zm-3.566 15.604c.881-.556 1.676-1.109 2.42-1.701C18.335 14.533 20 11.943 20 9c0-2.36-1.537-4-3.5-4-1.076 0-2.24.57-3.086 1.414L12 7.828l-1.414-1.414C9.74 5.57 8.576 5 7.5 5 5.56 5 4 6.656 4 9c0 2.944 1.666 5.533 4.645 7.903.745.592 1.54 1.145 2.421 1.7.299.189.595.37.934.572.339-.202.635-.383.934-.571z"/></svg>
-                    </span>
-                    <span class="i-saved">
-
-                    </span>
-                </button>
             </div>
         </div>
-
+        {{/is}}
         <div class="i-post-header-caption flex-row">
             <button class="i-post-header-caption-button">
                 <svg viewBox='0 0 24 24' fill='currentColor' aria-hidden='true'><path fill="none" d="M0 0h24v24H0z"/><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zM11 7h2v2h-2V7zm0 4h2v6h-2v-6z"/></svg>
@@ -69,19 +79,28 @@
             {{content}}
         </article>
     </main>
-    
-    {{#get "posts" limit="3" include="tags" filter="tags:[{{tags.[*].slug}}]+id:-{{id}}" as |related|}}
-    {{#if related}}
-    <section class="i-related-grid">
-        <h2>Read some more</h2>
-        {{#foreach related}}
-            {{> "line-card"}}
-        {{/foreach}}
+
+    {{#is "post"}}
+    <section class="i-comments">
+        {{comments}}
     </section>
-    {{/if}}
+
+    {{#get "posts" limit="3" include="tags" filter="tags:[{{tags.[*].slug}}]+id:-{{id}}" as |related|}}
+        {{#if related}}
+            <section class="i-related">
+                <h2>Read some more</h2>
+                <div class="i-card-grid">
+                    {{#foreach related}}
+                        {{> "line-card"}}
+                    {{/foreach}}
+                </div>
+            </section>
+        {{/if}}
     {{/get}}
+    {{/is}}
+{{/post}}
+
     {{> "footer"}}
 </div>
 
-{{/post}}
 

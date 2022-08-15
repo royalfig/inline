@@ -33,7 +33,12 @@
   box-shadow: 0.25em 0.25em 0 5px var(--primary);
   transform: translate(-0.25em, -0.25em);
   margin-block: 3rem;
-  grid-column: 2 / 5;
+}
+.kg-embed-card iframe[src*='youtube'],
+.kg-embed-card iframe[src*='vimeo'] {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
 }
 
 /*# sourceMappingURL=ghost-cards.css.map */

@@ -1,0 +1,22 @@
+{{#if isSecondary}}
+  <ul class='nav'>
+    <li class='{{link_class for='/' class=(concat 'nav-' 'home')}}'><a
+        href='{{@site.url}}'
+      >Ryan Feigenbaum &copy;
+        {{date format='YYYY'}}
+      </a></li>
+    {{#foreach navigation}}
+      <li class='{{link_class for=(url) class=(concat 'nav-' slug)}}'><a
+          href='{{url absolute='true'}}'
+        >{{label}}</a></li>
+    {{/foreach}}
+  </ul>
+{{else}}
+  <ul class='nav'>
+    {{#foreach navigation}}
+      <li class='{{link_class for=(url) class=(concat 'nav-' slug)}}'><a
+          href='{{url absolute='true'}}'
+        >{{label}}</a></li>
+    {{/foreach}}
+  </ul>
+{{/if}}

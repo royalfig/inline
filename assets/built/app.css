@@ -6,7 +6,7 @@
   --laptop: 992px;
   --desktop: 1200px;
   --widescreen: 1400px;
-  --gap: 1rem;
+  --gap: max(20px, 1rem);
   --width: 1024px;
   --post-width: 768px;
   --content-width: 650px;
@@ -134,31 +134,6 @@
     0 5.4px 17.9px hsla(var(--primary-h) var(--saturation) 1% / 0.062),
     0 10px 33.4px hsla(var(--primary-h) var(--saturation) 1% / 0.07),
     0 24px 80px hsla(var(--primary-h) var(--saturation) 1% / 0.09);
-}
-/* webdev, things, ghost, travel, academic, words */
-.tag-web-dev {
-  --tag: hsl(
-    calc(min(var(--complementary-color) + 30, 360)) var(--saturation) 80%
-  );
-}
-.tag-academic {
-  --tag: hsl(
-    calc(max(var(--complementary-color) - 30, 1)) var(--saturation) 80%
-  );
-}
-.tag-travel {
-  --tag: hsl(
-    calc(min(var(--complementary-color) + 240, 360)) var(--saturation) 80%
-  );
-}
-.tag-ghost-tag {
-  --tag: hsl(calc(min(var(--primary-h) + 30, 360)) var(--saturation) 80%);
-}
-.tag-things {
-  --tag: hsl(calc(max(var(--primary-h) - 30, 1)) var(--saturation) 80%);
-}
-.tag-words {
-  --tag: hsl(calc(min(var(--primary-h) + 120, 360)) var(--saturation) 80%);
 }
 /* Base */
 *,
@@ -454,16 +429,6 @@ small {
   opacity: 0.75;
 }
 /* Cards */
-.i-home-cards-grid {
-  justify-content: center;
-  gap: var(--gap);
-  grid-template-columns: repeat(2, minmax(10rem, 14rem));
-}
-@media (min-width: 768px) {
-  .i-home-cards-grid {
-    grid-template-columns: repeat(3, minmax(10rem, 12rem));
-  }
-}
 .i-home-cards {
   overflow: hidden;
 }
@@ -487,144 +452,17 @@ small {
   text-decoration: none;
   color: inherit;
 }
-/* CTA */
-.i-cta {
-  background-color: hsl(var(--complementary-color) 50% 90%);
+.i-home-cards-title a:hover:after {
+  content: '\0027A9';
+  -webkit-margin-start: 0.5em;
+          margin-inline-start: 0.5em;
 }
-.i-cta-wrapper {
-  max-width: var(--content-width);
-  margin-inline: auto;
-}
-.i-cta h2 {
-  color: #000;
-  text-align: left;
-}
-.i-cta p {
-  font-size: 1.15rem;
-}
-.i-cta p + p {
-  -webkit-margin-before: 1em;
-          margin-block-start: 1em;
-}
-.i-cta-form {
-  -webkit-margin-before: 3rem;
-          margin-block-start: 3rem;
-  gap: 1rem;
-}
-.i-cta form {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-.i-cta .flex {
-  flex-direction: column;
-}
-.i-cta-form .flex-column {
-  position: relative;
-}
-.i-cta label {
-  align-self: flex-start;
-  height: 0;
-  font-size: var(--small);
-  font-weight: 700;
-  text-align: left;
-  letter-spacing: var(--letter-spacing);
-  visibility: hidden;
-}
-.i-cta-icon {
-  position: absolute;
-  top: 50%;
-  left: 0.5em;
-  width: 1em;
-  height: 1em;
-  line-height: 1;
-  transform: translateY(-50%);
-}
-.i-cta-icon svg {
-  width: 100%;
-  height: 100%;
-}
-/* form states */
-.i-cta input {
-  width: 100%;
-  padding: 0.5em 0.5em 0.5em 2em;
-  font-family: inherit;
-  font-size: inherit;
-
-  font-weight: 700;
-  background-color: var(--white);
-  border: 3px solid var(--secondary);
-}
-.i-cta input.focus-visible,
-.i-cta:hover {
-  border-color: var(--primary);
-  outline: none;
-}
-.i-cta input:focus-visible,
-.i-cta:hover {
-  border-color: var(--primary);
-  outline: none;
-}
-.i-cta button {
-  padding: var(--button-padding);
-  font-family: inherit;
-  font-weight: 700;
-  color: inherit;
-  text-transform: uppercase;
-  letter-spacing: var(--letter-spacing);
-  background-color: var(--primary);
-}
-.i-cta button:hover,
-.i-cta button.focus-visible {
-  background-color: var(--secondary);
-  border: none;
-  outline: none;
-}
-.i-cta button:hover,
-.i-cta button:focus-visible {
-  background-color: var(--secondary);
-  border: none;
-  outline: none;
-}
-.i-cta button:focus {
-}
-.i-mail-success,
-.i-mail-error,
-.i-mail-loading {
-  display: none;
-}
-.success .i-mail-success,
-.error .i-mail-error,
-.loading .i-mail-loading {
-  display: inline;
-  display: initial;
-}
-.success .i-mail-default,
-.error .i-mail-default,
-.loading .i-mail-default {
-  display: none;
-}
-.i-mail-loading {
-  -webkit-animation: rotate 1s linear infinite;
-          animation: rotate 1s linear infinite;
-}
-@-webkit-keyframes rotate {
-  to {
-    transform: rotate(1turn);
-  }
-}
-@keyframes rotate {
-  to {
-    transform: rotate(1turn);
-  }
-}
-.loading button {
-  pointer-events: none;
-}
-.tag-template {
+.tag-template,
+.author-template {
   padding: 1rem;
 }
-.tag-template .i-home-section {
+.tag-template,
+.i-home-section {
   min-height: 85vh;
 }
 .tag-template .i-home-section:nth-of-type(2):empty {
@@ -685,8 +523,10 @@ small {
 .i-post-header h1 {
   /* font-size: var(--h2); */
   line-height: 1.1;
-  color: var(--tag);
   text-transform: uppercase;
+}
+.i-post-header-text p {
+  opacity: 0.75;
 }
 .i-post-header-meta {
   text-align: right;
@@ -706,6 +546,7 @@ small {
   text-transform: uppercase;
   -webkit-margin-before: 0;
           margin-block-start: 0;
+  opacity: 0.75;
 }
 .i-post-header-share {
   justify-content: flex-end;
@@ -718,7 +559,7 @@ small {
 .i-icon svg {
   width: 100%;
   height: 100%;
-  color: var(--tag);
+  color: var(--primary);
 }
 .i-copy-button .copied {
   display: none;
@@ -803,27 +644,31 @@ small {
 .i-post-grid > * {
   grid-column: content;
 }
-.post-template .i-footer {
+.post-template .i-footer,
+.page-template .i-footer {
   padding: 2rem 1rem;
 }
-.post-template .i-footer a {
+.post-template .i-footer a,
+.page-template .i-footer a {
   color: var(--element-light);
 }
 /* Related posts */
-.i-related-grid {
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: auto auto;
-  gap: var(--gap);
+.i-related,
+.i-comments {
   max-width: var(--width);
   margin: 5rem auto;
+  padding: 0 var(--gap);
 }
-.i-related-grid h2 {
-  grid-column: 1 / -1;
-  text-transform: uppercase;
+.i-related .i-card-grid {
+  justify-content: start;
+}
+.i-related h2 {
   letter-spacing: var(--letter-spacing);
+  text-transform: uppercase;
+  margin-bottom: 2rem;
 }
-.i-related-grid .i-card-line-tag,
-.i-related-grid .i-card-line-title a {
+.i-related .i-card-line-tag,
+.i-related .i-card-line-title a {
   color: var(--element);
 }
 /* These styles define the content of a post (and page). You could add styles for bold font, quotes, etc. */
@@ -878,6 +723,7 @@ small {
   top: 0;
   right: 4px;
   font-size: var(--x-small);
+  color: #ebff87;
 }
 /* Components */
 /* Hero */
@@ -954,7 +800,7 @@ small {
   -webkit-margin-before: 1rem;
           margin-block-start: 1rem;
 }
-.i-hero-grid-cards {
+.i-grid-cards {
   grid-template-columns: repeat(1, minmax(10rem, 1fr));
   gap: 3rem 2rem;
   -webkit-margin-after: 3rem;
@@ -963,21 +809,21 @@ small {
   padding: 0 2rem;
 }
 @media (min-width: 576px) {
-  .i-hero-grid-cards {
+  .i-grid-cards {
     align-self: flex-start;
     grid-template-columns: repeat(2, minmax(10rem, 12rem));
   }
 
-  .i-hero-grid-cards > :last-child {
+  .i-grid-cards > :last-child {
     grid-column: 1 / -1;
   }
 }
 @media (min-width: 768px) {
-  .i-hero-grid-cards {
+  .i-grid-cards {
     grid-template-columns: repeat(3, minmax(10rem, 12rem));
   }
 
-  .i-hero-grid-cards > :last-child {
+  .i-grid-cards > :last-child {
     grid-column: initial;
   }
 }
@@ -998,12 +844,23 @@ small {
     grid-template-rows: auto;
   }
 
-  .i-hero-grid-cards {
+  .i-grid-cards {
     padding-inline: var(--inline);
   }
 
   .i-hero-img-wrapper {
     transform: translateY(-1rem);
+  }
+}
+/* Shared */
+.i-card-grid {
+  justify-content: center;
+  gap: calc(var(--gap) + 1rem) var(--gap);
+  grid-template-columns: repeat(2, minmax(10rem, 14rem));
+}
+@media (min-width: 768px) {
+  .i-card-grid {
+    grid-template-columns: repeat(3, minmax(10rem, 12rem));
   }
 }
 /* Line card */
@@ -1079,6 +936,7 @@ small {
 .i-picture-card-link-flex:focus img {
   transform: scale(1.5) rotate(15deg);
 }
+.i-picture-card picture,
 .i-picture-card img {
   position: absolute;
   top: 0;
@@ -1393,10 +1251,142 @@ a.i-current {
   background-color: var(--white);
   color: var(--primary);
 }
+/* CTA */
+.i-cta {
+  background-color: hsl(var(--complementary-color) 50% 90%);
+}
+.i-cta-wrapper {
+  max-width: var(--content-width);
+  margin-inline: auto;
+}
+.i-cta h2 {
+  color: #000;
+  text-align: left;
+}
+.i-cta p {
+  font-size: 1.15rem;
+}
+.i-cta p + p {
+  -webkit-margin-before: 1em;
+          margin-block-start: 1em;
+}
+.i-cta-form {
+  -webkit-margin-before: 3rem;
+          margin-block-start: 3rem;
+  gap: 1rem;
+}
+.i-cta form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.i-cta .flex {
+  flex-direction: column;
+}
+.i-cta-form .flex-column {
+  position: relative;
+}
+.i-cta label {
+  align-self: flex-start;
+  height: 0;
+  font-size: var(--small);
+  font-weight: 700;
+  text-align: left;
+  letter-spacing: var(--letter-spacing);
+  visibility: hidden;
+}
+.i-cta-icon {
+  position: absolute;
+  top: 50%;
+  left: 0.5em;
+  width: 1em;
+  height: 1em;
+  line-height: 1;
+  transform: translateY(-50%);
+}
+.i-cta-icon svg {
+  width: 100%;
+  height: 100%;
+}
+/* form states */
+.i-cta input {
+  width: 100%;
+  padding: 0.5em 0.5em 0.5em 2em;
+  font-family: inherit;
+  font-size: inherit;
+
+  font-weight: 700;
+  background-color: var(--white);
+  border: 3px solid var(--secondary);
+}
+.i-cta input.focus-visible,
+.i-cta:hover {
+  border-color: var(--primary);
+  outline: none;
+}
+.i-cta input:focus-visible,
+.i-cta:hover {
+  border-color: var(--primary);
+  outline: none;
+}
+.i-cta button {
+  padding: var(--button-padding);
+  font-family: inherit;
+  font-weight: 700;
+  color: inherit;
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing);
+  background-color: var(--primary);
+}
+.i-cta button:hover,
+.i-cta button.focus-visible {
+  background-color: var(--secondary);
+  border: none;
+  outline: none;
+}
+.i-cta button:hover,
+.i-cta button:focus-visible {
+  background-color: var(--secondary);
+  border: none;
+  outline: none;
+}
+.i-mail-success,
+.i-mail-error,
+.i-mail-loading {
+  display: none;
+}
+.success .i-mail-success,
+.error .i-mail-error,
+.loading .i-mail-loading {
+  display: inline;
+  display: initial;
+}
+.success .i-mail-default,
+.error .i-mail-default,
+.loading .i-mail-default {
+  display: none;
+}
+.i-mail-loading {
+  -webkit-animation: rotate 1s linear infinite;
+          animation: rotate 1s linear infinite;
+}
+@-webkit-keyframes rotate {
+  to {
+    transform: rotate(1turn);
+  }
+}
+@keyframes rotate {
+  to {
+    transform: rotate(1turn);
+  }
+}
+.loading button {
+  pointer-events: none;
+}
 /* Vendor */
 /* These styles are required by Ghost 👻 and apply to editor cards. These styles are derived from Ghost defaults: https://ghost.org/docs/themes/content/ */
 /* Image Card */
-.kg-card {
+.kg-card:not(.kg-bookmark-card) {
   margin-block: 3rem;
 }
 .kg-image-card img {

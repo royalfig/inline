@@ -4,7 +4,7 @@ async function getPosts() {
   console.log('fetchings');
   try {
     const res = await fetch(
-      'http://localhost:2368/ghost/api/content/posts/?key=a095332ca4856aab5549f1a277&limit=all&include=authors,tags&formats=plaintext',
+      `${SEARCH_URL}/ghost/api/content/posts/?key=${SEARCH_KEY}&limit=all&include=authors,tags&formats=plaintext`,
     );
 
     if (!res.ok) {
@@ -18,6 +18,10 @@ async function getPosts() {
 }
 
 export default async function search() {
+  if (!SEARCH_KEY || !SEARCH_URL) {
+    throw Error('API key and URL required');
+  }
+
   let posts = await cache();
 
   let miniSearch = new MiniSearch({
@@ -29,7 +33,6 @@ export default async function search() {
   miniSearch.addAll(posts);
 
   const input = document.querySelector('.i-search-input');
-  console.log(input);
   input.addEventListener('input', (e) => {
     let results = miniSearch.search(e.target.value);
 
@@ -53,7 +56,7 @@ function resultTemplate(results) {
         (score / results[0].score) * 100
       }%"></span>
       </div>
-        <p><a href="${url}">${title}</a> </p>
+        <p><a href="${url}">${title}</a></p>
         <p class="i-search-excerpt">${excerpt}</p>
               </div>`;
     })

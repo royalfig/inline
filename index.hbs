@@ -8,8 +8,8 @@
 <main id="i-main">
     
     <div class="i-home-section">
-        <h1 class="i-home-cards-title">{{#tag}}{{name}}{{/tag}}</h1>
-        <div class="i-home-cards-grid">
+        <h1 class="i-home-cards-title">{{#tag}}{{name}}{{/tag}}{{#author}}{{name}}{{/author}}</h1>
+        <div class="i-card-grid">
             {{#foreach posts from="1" to="6"}}
                 {{> "picture-card"}}
             {{/foreach}}
@@ -18,7 +18,7 @@
 
 {{#match posts.length ">" 6}}
     <div class="i-home-section">
-        <div class="i-home-cards-grid">
+        <div class="i-card-grid">
             {{#foreach posts from="7" to="12"}}
                 {{> "line-card"}}
             {{/foreach}}

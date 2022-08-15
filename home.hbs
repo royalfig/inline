@@ -9,8 +9,8 @@
     {{> "hero"}}
 
     <section class="i-home-cards i-home-section">
-        <h2 class="i-home-cards-title">Things I've Made</h2>
-        <div class="i-home-cards-grid">
+        <h2 class="i-home-cards-title"><a href="/tag/things/">Things I've Made</a></h2>
+        <div class="i-card-grid">
             {{#get "posts" include="tags" filter="tags:things+featured:false" limit="6" as |sites| }}
                 {{#foreach sites}}
                     {{> "picture-card"}}
@@ -20,8 +20,8 @@
     </section>
 
     <section class="i-home-cards i-home-section i-home-cards-bg-2">
-            <h2 class="i-home-cards-title">Web Dev &amp; Design</h2>
-        <div class="i-home-cards-grid">
+        <h2 class="i-home-cards-title"><a href="/tag/web-dev/">Web Dev &amp; Design</a></h2>
+        <div class="i-card-grid">
             {{#get "posts" include="tags" filter="tags:web-dev+tags:-css+featured:false" limit="6" as |sites| }}
                 {{#foreach sites}}
                     {{> "line-card"}}
@@ -48,8 +48,8 @@
     </section>
 
     <section class="i-home-cards i-home-section i-home-cards-bg-2">
-            <h2 class="i-home-cards-title"><a href="/tag/words/">Words on Words</a></h2>
-        <div class="i-home-cards-grid">
+        <h2 class="i-home-cards-title"><a href="/tag/words/">Words on Words</a></h2>
+        <div class="i-card-grid">
             {{#get "posts" include="tags" filter="tags:words" limit="6" as |sites| }}
                 {{#foreach sites}}
                     {{> "picture-card"}}
@@ -87,7 +87,7 @@
 
     <section class="i-home-cards i-home-section i-home-cards-bg-2">
             <h2 class="i-home-cards-title"><a href="/tag/academic/">For the Braniacs</a></h2>
-        <div class="i-home-cards-grid">
+        <div class="i-card-grid">
             {{#get "posts" include="tags" filter="tags:academic" limit="6" as |sites| }}
                 {{#foreach sites}}
                     {{> "line-card"}}

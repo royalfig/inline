@@ -1,4 +1,6 @@
-@import '../../node_modules/highlight.js/styles/github-dark.css';
+@import '../../node_modules/highlight.js/styles/base16/dracula.css';
+
+/* To create your secondary color, add 30, 120, 150, 180, 210, 240, or 300 to the H value of your primary color. For this example, I added 30. */
 
 .kg-card.kg-code-card {
   position: relative;

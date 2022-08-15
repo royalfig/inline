@@ -1,7 +1,7 @@
 /* These styles are required by Ghost 👻 and apply to editor cards. These styles are derived from Ghost defaults: https://ghost.org/docs/themes/content/ */
 
 /* Image Card */
-.kg-card {
+.kg-card:not(.kg-bookmark-card) {
   margin-block: 3rem;
 }
 

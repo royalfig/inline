@@ -9,10 +9,28 @@
                 <p><a href="#/portal/subscribe">Subscribe to my newsletter</a> so you don't fall behind and get held back or just check out some of my favorite writing &rarr;</p>
             </div>
             <div class="i-hero-img-wrapper">
-                <img class="i-hero-img" src="{{img_url @site.cover_image}}" alt="">
+                <picture class="i-hero-img">
+                    <source 
+                        srcset="{{img_url @site.cover_image size="m" format="avif"}} 500w,
+                                {{img_url @site.cover_image size="l" format="avif"}} 700w,
+                                {{img_url @site.cover_image size="xl" format="avif"}} 1000w,
+                                {{img_url @site.cover_image size="xxl" format="avif"}} 2000w"
+                        sizes="(max-width: 992px) 100vw, (max-width: 1600px) 700px, (max-width: 2200px) 1000px, 2000px" 
+                        type="image/avif"
+                    >
+                    <source 
+                        srcset="{{img_url @site.cover_image size="m" format="webp"}} 500w,
+                                {{img_url @site.cover_image size="l" format="webp"}} 700w,
+                                {{img_url @site.cover_image size="xl" format="webp"}} 1000w,
+                                {{img_url @site.cover_image size="xxl" format="webp"}} 2000w"
+                                sizes="(max-width: 992px) 100vw, (max-width: 1600px) 700px, (max-width: 2200px) 1000px, 2000px"
+                        type="image/webp"
+                    >
+                    <img class="i-hero-img" src="{{img_url @site.cover_image size="xxl"}}" alt="{{#if cover_image_caption}}{{cover_image_caption}}{{/if}}">
+                </picture>
             </div>
         </div>
-        <div class="i-hero-grid-cards">
+        <div class="i-grid-cards">
             {{#get "posts" filter="featured:true" include="tags" limit="3" as |featured|}}
             {{#foreach featured}}
                 {{> "line-card"}}
@@ -23,3 +41,4 @@
     <div class="i-hero-inner-border">
     </div>
 </section>
+

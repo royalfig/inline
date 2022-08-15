@@ -11,7 +11,7 @@
   --laptop: 992px;
   --desktop: 1200px;
   --widescreen: 1400px;
-  --gap: 1rem;
+  --gap: max(20px, 1rem);
   --width: 1024px;
   --post-width: 768px;
   --content-width: 650px;

@@ -2064,7 +2064,7 @@
     console.log('fetchings');
     try {
       const res = await fetch(
-        'http://localhost:2368/ghost/api/content/posts/?key=a095332ca4856aab5549f1a277&limit=all&include=authors,tags&formats=plaintext',
+        `${SEARCH_URL}/ghost/api/content/posts/?key=${SEARCH_KEY}&limit=all&include=authors,tags&formats=plaintext`,
       );
 
       if (!res.ok) {
@@ -2078,6 +2078,10 @@
   }
 
   async function search() {
+    if (!SEARCH_KEY || !SEARCH_URL) {
+      throw Error('API key and URL required');
+    }
+
     let posts = await cache();
 
     let miniSearch = new MiniSearch({
@@ -2089,7 +2093,6 @@
     miniSearch.addAll(posts);
 
     const input = document.querySelector('.i-search-input');
-    console.log(input);
     input.addEventListener('input', (e) => {
       let results = miniSearch.search(e.target.value);
 
@@ -2113,7 +2116,7 @@
         (score / results[0].score) * 100
       }%"></span>
       </div>
-        <p><a href="${url}">${title}</a> </p>
+        <p><a href="${url}">${title}</a></p>
         <p class="i-search-excerpt">${excerpt}</p>
               </div>`;
       })
@@ -2135,6 +2138,37 @@
     return JSON.parse(localStorage.getItem('posts'));
   }
 
+  function createLink(num, original) {
+    if (num === 1) {
+      return original;
+    }
+
+    return original + 'page/' + num + '/';
+  }
+
+  function pagination() {
+    const paginationEl = document.querySelector('.i-page-number');
+
+    if (!paginationEl) {
+      return;
+    }
+
+    const { page, pages, original } = paginationEl.dataset;
+
+    let pager = [];
+
+    for (let i = 1; i <= Number.parseInt(pages); i++) {
+      pager.push(
+        `<a class="i-number ${
+        i === Number.parseInt(page) ? 'i-current' : ''
+      }" href="${createLink(i, original)}">${i}</a>`,
+      );
+    }
+
+    const el = pager.join('');
+    paginationEl.innerHTML = el;
+  }
+
   function determineColorModeSupport() {
     const colorPrefButtons = document.querySelectorAll('.i-mode-button');
 
@@ -2146,6 +2180,14 @@
         e.style.display = 'none';
       });
     }
+  }
+
+  function changeColor() {
+    determineColorModeSupport();
+    const hex = document.documentElement.dataset.accentColor;
+    const colorInput = document.querySelector('.i-color');
+    colorInput.value = hex;
+    colorInput.addEventListener('change', generateColorPalette);
   }
 
   // LiveReload server
@@ -2163,33 +2205,8 @@
   document.body.addEventListener('keydown', keyHandler);
 
   search();
-  determineColorModeSupport();
-  const hex = document.documentElement.dataset.accentColor;
-  const colorInput = document.querySelector('.i-color');
-  colorInput.value = hex;
-  colorInput.addEventListener('change', generateColorPalette);
-
-  // Pagination
-  const paginationEl = document.querySelector('.i-page-number');
-
-  // if (!paginationEl) {
-  //   return;
-  // }
-
-  const { page, pages, slug } = paginationEl.dataset;
-
-  let pager = [];
-
-  for (let i = 1; i <= Number.parseInt(pages); i++) {
-    pager.push(
-      `<a class="i-number ${
-      i === Number.parseInt(page) ? 'i-current' : ''
-    }" href="/tag/${slug}/${i === 1 ? '' : 'page/' + i + '/'}">${i}</a>`,
-    );
-  }
-
-  const el = pager.join('');
-  paginationEl.innerHTML = el;
+  pagination();
+  changeColor();
 
 })();
 //# sourceMappingURL=app.js.map
