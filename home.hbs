@@ -8,10 +8,10 @@
 <main id="main">
     {{> "hero"}}
 
-    <section class="i-home-cards i-home-section">
-        <h2 class="i-home-cards-title"><a href="/tag/things/">Things I've Made</a></h2>
+    <section class="i-home-cards i-home-section i-home-cards-bg-2">
+        <h2 class="i-home-cards-title"><a href="/tag/web-dev/">Web Dev &amp; Design</a></h2>
         <div class="i-card-grid">
-            {{#get "posts" include="tags" filter="tags:things+featured:false" limit="6" as |sites| }}
+            {{#get "posts" include="tags" filter="tags:web-dev+featured:false" limit="6" as |sites| }}
                 {{#foreach sites}}
                     {{> "picture-card"}}
                 {{/foreach}}
@@ -20,9 +20,9 @@
     </section>
 
     <section class="i-home-cards i-home-section i-home-cards-bg-2">
-        <h2 class="i-home-cards-title"><a href="/tag/web-dev/">Web Dev &amp; Design</a></h2>
+        <h2 class="i-home-cards-title"><a href="/tag/essays/">Essays</a></h2>
         <div class="i-card-grid">
-            {{#get "posts" include="tags" filter="tags:web-dev+tags:-css+featured:false" limit="6" as |sites| }}
+            {{#get "posts" include="tags" filter="tags:essays+featured:false" limit="6" as |sites| }}
                 {{#foreach sites}}
                     {{> "line-card"}}
                 {{/foreach}}
@@ -47,10 +47,10 @@
         </div>
     </section>
 
-    <section class="i-home-cards i-home-section i-home-cards-bg-2">
-        <h2 class="i-home-cards-title"><a href="/tag/words/">Words on Words</a></h2>
+    <section class="i-home-cards i-home-section">
+        <h2 class="i-home-cards-title"><a href="/tag/things/">Things I've Made</a></h2>
         <div class="i-card-grid">
-            {{#get "posts" include="tags" filter="tags:words" limit="6" as |sites| }}
+            {{#get "posts" include="tags" filter="tags:things+featured:false" limit="6" as |sites| }}
                 {{#foreach sites}}
                     {{> "picture-card"}}
                 {{/foreach}}
@@ -70,7 +70,7 @@
             </div>
             <form class="i-cta-form" data-members-form="subscribe">
                 <div class="flex-column">
-                    <input type="email" class="i-input" aria-label="email">
+                    <input type="email" class="i-input" aria-label="email" data-members-email required>
                     <span class="i-cta-icon">
                         <svg class="i-mail-default" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" d="M0 0h24v24H0z"/><path d="M3 3h18a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm17 4.238l-7.928 7.1L4 7.216V19h16V7.238zM4.511 5l7.55 6.662L19.502 5H4.511z"/></svg>
                         <svg class="i-mail-success" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" d="M0 0h24v24H0z"/><path d="M22 14h-2V7.238l-7.928 7.1L4 7.216V19h10v2H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h18a1 1 0 0 1 1 1v10zM4.511 5l7.55 6.662L19.502 5H4.511zM19 22l-3.536-3.536 1.415-1.414L19 19.172l3.536-3.536 1.414 1.414L19 22z"/></svg>
@@ -78,7 +78,7 @@
                         <svg class="i-mail-loading"  viewBox="0 0 24 24" aria-hidden="true"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 2a1 1 0 0 1 1 1v3a1 1 0 0 1-2 0V3a1 1 0 0 1 1-1zm0 15a1 1 0 0 1 1 1v3a1 1 0 0 1-2 0v-3a1 1 0 0 1 1-1zm8.66-10a1 1 0 0 1-.366 1.366l-2.598 1.5a1 1 0 1 1-1-1.732l2.598-1.5A1 1 0 0 1 20.66 7zM7.67 14.5a1 1 0 0 1-.366 1.366l-2.598 1.5a1 1 0 1 1-1-1.732l2.598-1.5a1 1 0 0 1 1.366.366zM20.66 17a1 1 0 0 1-1.366.366l-2.598-1.5a1 1 0 0 1 1-1.732l2.598 1.5A1 1 0 0 1 20.66 17zM7.67 9.5a1 1 0 0 1-1.366.366l-2.598-1.5a1 1 0 1 1 1-1.732l2.598 1.5A1 1 0 0 1 7.67 9.5z"/></svg>
                     </span>
                 </div>
-                <button class="i-button">
+                <button class="i-button" type="submit">
                     <span class="i-mail-default">Subscribe</span><span class="i-mail-success">Success. Check your inbox</span><span class="i-mail-error">Error. Try again</span><span class="i-mail-loading">Doing some things...</span>
                 </button>
             </form>
@@ -88,7 +88,7 @@
     <section class="i-home-cards i-home-section i-home-cards-bg-2">
             <h2 class="i-home-cards-title"><a href="/tag/academic/">For the Braniacs</a></h2>
         <div class="i-card-grid">
-            {{#get "posts" include="tags" filter="tags:academic" limit="6" as |sites| }}
+            {{#get "posts" include="tags" filter="tags:academic+featured:false" limit="6" as |sites| }}
                 {{#foreach sites}}
                     {{> "line-card"}}
                 {{/foreach}}

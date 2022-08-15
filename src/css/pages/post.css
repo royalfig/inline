@@ -205,8 +205,8 @@
 .i-related,
 .i-comments {
   max-width: var(--width);
-  margin: 5rem auto;
   padding: 0 var(--gap);
+  margin: 5rem auto;
 }
 
 .i-related .i-card-grid {
@@ -214,9 +214,9 @@
 }
 
 .i-related h2 {
-  letter-spacing: var(--letter-spacing);
-  text-transform: uppercase;
   margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing);
 }
 
 .i-related .i-card-line-tag,

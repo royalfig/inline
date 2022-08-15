@@ -1,14 +1,14 @@
 .i-pagination {
-  margin-inline: auto;
+  align-items: center;
   justify-content: center;
   padding: 3rem 1rem;
+  font-family: var(--heading-typeface);
   font-size: var(--small);
+  font-weight: 700;
+  line-height: 1;
   text-transform: uppercase;
   letter-spacing: var(--letter-spacing);
-  font-weight: 700;
-  font-family: var(--heading-typeface);
-  align-items: center;
-  line-height: 1;
+  margin-inline: auto;
 }
 
 .i-pagination a {
@@ -17,20 +17,20 @@
 }
 
 .i-number {
-  border: 1px solid;
   padding: 0.25em;
+  text-align: center;
+  border: 1px solid;
 
   font-variant-numeric: tabular-nums;
-  text-align: center;
 }
 
 .i-pagination svg {
   width: 2em;
   height: 2em;
-  fill: currentColor;
+  fill: currentcolor;
 }
 
 a.i-current {
-  background-color: var(--white);
   color: var(--primary);
+  background-color: var(--white);
 }

@@ -1,4 +1,5 @@
 import { determineColorModeSupport } from './colorModeToggle';
+
 export default function changeColor() {
   determineColorModeSupport();
   const hex = document.documentElement.dataset.accentColor;

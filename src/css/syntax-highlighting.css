@@ -17,3 +17,16 @@
 [data-color-pref='dark'] .post code:not([class*='language']) {
   background-color: hsla(var(--primary-h), var(--saturation), 10%, 0.5);
 }
+
+.kg-code-card code::-webkit-scrollbar {
+  width: 1em;
+}
+
+.kg-code-card code::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.kg-code-card code::-webkit-scrollbar-thumb {
+  background-color: hsl(236, 15%, 10%);
+  outline: hsl(236, 15%, 12%);
+}

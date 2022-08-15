@@ -3,7 +3,7 @@ function createLink(num, original) {
     return original;
   }
 
-  return original + 'page/' + num + '/';
+  return `${original}page/${num}/`;
 }
 
 export default function pagination() {
@@ -15,12 +15,13 @@ export default function pagination() {
 
   const { page, pages, original } = paginationEl.dataset;
 
-  let pager = [];
+  const pager = [];
 
-  for (let i = 1; i <= Number.parseInt(pages); i++) {
+  // eslint-disable-next-line no-plusplus
+  for (let i = 1; i <= Number.parseInt(pages, 10); i++) {
     pager.push(
       `<a class="i-number ${
-        i === Number.parseInt(page) ? 'i-current' : ''
+        i === Number.parseInt(page, 10) ? 'i-current' : ''
       }" href="${createLink(i, original)}">${i}</a>`,
     );
   }

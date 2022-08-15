@@ -1,0 +1,8 @@
+<div class="i-home-section">
+    <h1 class="i-home-cards-title">{{#is "tag"}}{{#tag}}{{name}}{{/tag}}{{else}}Ryan Feigenbaum{{/is}}</h1>
+    <div class="i-card-grid">
+        {{#foreach posts from="1" to="6"}}
+            {{> "picture-card"}}
+        {{/foreach}}
+    </div>
+</div>

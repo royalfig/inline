@@ -1,7 +1,6 @@
 import MiniSearch from 'minisearch';
 
 async function getPosts() {
-  console.log('fetchings');
   try {
     const res = await fetch(
       `${SEARCH_URL}/ghost/api/content/posts/?key=${SEARCH_KEY}&limit=all&include=authors,tags&formats=plaintext`,
@@ -22,11 +21,15 @@ export default async function search() {
     throw Error('API key and URL required');
   }
 
-  let posts = await cache();
+  const posts = await cache();
 
-  let miniSearch = new MiniSearch({
+  const miniSearch = new MiniSearch({
     fields: ['title', 'plaintext'], // fields to index for full-text search
-    storeFields: ['title', 'url', 'excerpt', 'primary_tag'], // fields to return with search results
+    storeFields: ['title', 'url', 'excerpt', 'primary_tag'],
+    searchOptions: {
+      boost: { title: 2 },
+      fuzzy: 0.2,
+    }, // fields to return with search results
   });
 
   // Index all documents
@@ -34,32 +37,45 @@ export default async function search() {
 
   const input = document.querySelector('.i-search-input');
   input.addEventListener('input', (e) => {
-    let results = miniSearch.search(e.target.value);
-
-    console.log(results);
-    // Search with default options
-    let resultHtml = resultTemplate(results);
-
     const resultsContainer = document.querySelector('.i-search-results');
+
+    if (e.target.value === '') {
+      resultsContainer.innerHTML = '';
+      return;
+    }
+
+    const results = miniSearch.search(e.target.value);
+
+    // Search with default options
+    const resultHtml = results.length
+      ? resultTemplate(results)
+      : '<p>No results. Try again.</p>';
+
     resultsContainer.innerHTML = resultHtml;
   });
 }
 
 function resultTemplate(results) {
   return results
-    .map(({ title, url, primary_tag, excerpt, score }) => {
-      return `<div class="i-search-result">
+    .map(
+      ({
+        title,
+        url,
+        primary_tag,
+        excerpt,
+        score,
+      }) => `<div class="i-search-result">
       <div class="i-search-tags flex-row">
         <p class="i-search-tag">${
-          primary_tag?.name
+          primary_tag && primary_tag.name
         }</p><span class="i-search-score" style="width: ${
         (score / results[0].score) * 100
       }%"></span>
       </div>
         <p><a href="${url}">${title}</a></p>
         <p class="i-search-excerpt">${excerpt}</p>
-              </div>`;
-    })
+              </div>`,
+    )
     .join('');
 }
 

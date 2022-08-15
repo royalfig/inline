@@ -17,11 +17,14 @@
   padding-bottom: 1rem;
 }
 
-.home-template .i-nav-flex {
-  padding: 1rem;
+/* Make primary color lighter on home page */
+.home-template {
+  --primary: hsl(var(--primary-h) var(--saturation) 70%);
+  --secondary: hsl(var(--complementary-color) var(--saturation) 70%);
 }
 
-@media (--tablet) {
+.home-template .i-nav-flex {
+  padding: 1rem;
 }
 
 @media (--laptop) {
@@ -57,11 +60,11 @@
 
 /* Poodle */
 .i-poodle {
-  padding: 3rem 0;
   z-index: 1;
   flex-direction: column;
   justify-content: center;
   height: 100%;
+  padding: 3rem 0;
   font-family: var(--heading-typeface);
   font-size: var(--h2);
   font-weight: 700;
@@ -72,7 +75,7 @@
   letter-spacing: var(--letter-spacing);
 }
 
-.i-poodle-video-wrapper::after {
+/* .i-poodle-video-wrapper::after {
   position: absolute;
   top: 0;
   right: 0;
@@ -81,13 +84,13 @@
   content: '';
   background-color: var(--secondary);
   mix-blend-mode: saturation;
-}
+} */
 
 .i-poodle-video-wrapper {
-  aspect-ratio: 16 / 9;
-  width: 100%;
-  margin-block: 3rem;
   position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin-block: 3rem;
 }
 
 .i-poodle-video-wrapper video {
@@ -136,8 +139,8 @@
 }
 
 .i-home-cards-title a {
-  text-decoration: none;
   color: inherit;
+  text-decoration: none;
 }
 
 .i-home-cards-title a:hover:after {
