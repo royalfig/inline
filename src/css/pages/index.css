@@ -3,8 +3,7 @@
   padding: 1rem;
 }
 
-.tag-template,
-.i-home-section {
+.tag-template .i-home-section {
   min-height: 85vh;
 }
 

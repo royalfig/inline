@@ -3,6 +3,7 @@
   flex-direction: column;
   justify-content: center;
   min-height: 100vh;
+  min-height: 100dvh;
   padding: 3rem 2rem;
   margin-inline: auto;
   scroll-snap-align: center;
@@ -123,7 +124,6 @@
 .i-home-cards-title-flex {
   align-items: center;
   justify-content: center;
-
   margin: 1rem 0 2rem;
   font-size: 3rem;
 }

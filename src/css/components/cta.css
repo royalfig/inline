@@ -1,7 +1,7 @@
 /* CTA */
 .i-cta {
-  background-color: hsl(var(--complementary-color), 50%, 90%);
   overflow-x: hidden;
+  background-color: hsl(var(--complementary-color), 50%, 90%);
 }
 
 .i-cta-wrapper {

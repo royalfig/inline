@@ -1,8 +1,8 @@
 /* Shared */
 .i-card-grid {
-  grid-template-columns: minmax(10rem, 1fr);
+  grid-template-columns: minmax(10rem, 18.75rem);
   justify-content: center;
-  gap: var(--gap);
+  gap: 2rem;
 }
 
 @media (--phone) {
@@ -75,6 +75,7 @@
 .i-picture-card {
   width: 100%;
   overflow: hidden;
+  box-shadow: var(--box-shadow);
 }
 
 .i-picture-card-link-flex {
