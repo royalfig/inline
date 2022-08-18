@@ -94,14 +94,14 @@
         </script>
 
         {{!-- CSS and JS with asset helper--}}
-        <link rel="stylesheet" href="{{asset 'built/app.css'}}" />
-        <script src="{{asset "built/app.js"}}" defer></script>
+        <link rel="stylesheet" href="{{asset 'built/app.css' hasMinFile='true'}}" />
+        <script src="{{asset "built/app.js" hasMinFile='true'}}" defer></script>
         
         {{#is "post,page"}}
         {{!-- <link rel="stylesheet" href="{{asset 'built/post.css'}}"> --}}
-        <script src="{{asset 'built/post.js'}}" defer></script>
-        <link rel="stylesheet" href="{{asset 'built/syntax-highlighting.css'}}">
-        <script src="{{asset 'built/syntax-highlighting.js'}}" defer></script>
+        <script src="{{asset 'built/post.js' hasMinFile='true'}}" defer></script>
+        <link rel="stylesheet" href="{{asset 'built/syntax-highlighting.css' hasMinFile='true'}}">
+        <script src="{{asset 'built/syntax-highlighting.js' hasMinFile='true'}}" defer></script>
         
         {{/is}}
  
@@ -112,7 +112,7 @@
         {{!-- Outputs important meta data and settings, should always be in <head> --}}
         {{ghost_head}}
 
-        <link rel="stylesheet" href="{{asset '/built/ghost-cards.css'}}">
+        <link rel="stylesheet" href="{{asset '/built/ghost-cards.css' hasMinFile='true'}}">
     </head>
 
     <body class="{{body_class}}">
