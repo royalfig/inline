@@ -14,7 +14,10 @@ import cssnano from 'cssnano';
 
 const postcssConfig = postcss({
   include: 'src/css/app.css',
-  extract: resolve('assets/built/app.css'),
+  extract:
+    process.env.NODE_ENV === 'production'
+      ? resolve('assets/built/app.min.css')
+      : resolve('assets/built/app.css'),
   sourceMap: true,
   plugins: [
     atImport,
@@ -30,7 +33,10 @@ const postcssConfig = postcss({
 
 const postcssConfigSyntax = postcss({
   include: 'src/css/syntax-highlighting.css',
-  extract: resolve('assets/built/syntax-highlighting.css'),
+  extract:
+    process.env.NODE_ENV === 'production'
+      ? resolve('assets/built/syntax-highlighting.min.css')
+      : resolve('assets/built/syntax-highlighting.css'),
   sourceMap: true,
   plugins: [
     atImport,
@@ -46,7 +52,10 @@ const postcssConfigSyntax = postcss({
 
 const postcssConfigGhost = postcss({
   include: 'src/css/ghost-cards.css',
-  extract: resolve('assets/built/ghost-cards.css'),
+  extract:
+    process.env.NODE_ENV === 'production'
+      ? resolve('assets/built/ghost-cards.min.css')
+      : resolve('assets/built/ghost-cards.css'),
   sourceMap: true,
   plugins: [
     atImport,
@@ -77,7 +86,10 @@ export default [
   {
     input: 'src/js/app/index.js',
     output: {
-      file: 'assets/built/app.js',
+      file:
+        process.env.NODE_ENV === 'production'
+          ? 'assets/built/app.min.js'
+          : 'assets/built/app.js',
       format: 'iife',
       sourcemap: true,
     },
@@ -86,7 +98,10 @@ export default [
   {
     input: 'src/js/post/index.js',
     output: {
-      file: 'assets/built/post.js',
+      file:
+        process.env.NODE_ENV === 'production'
+          ? 'assets/built/post.min.js'
+          : 'assets/built/post.js',
       format: 'iife',
       sourcemap: true,
     },
@@ -95,7 +110,10 @@ export default [
   {
     input: 'src/js/syntax-highlighting.js',
     output: {
-      file: 'assets/built/syntax-highlighting.js',
+      file:
+        process.env.NODE_ENV === 'production'
+          ? 'assets/built/syntax-highlighting.min.js'
+          : 'assets/built/syntax-highlighting.js',
       format: 'iife',
       sourcemap: true,
     },
@@ -104,7 +122,10 @@ export default [
   {
     input: 'src/js/ghost-cards.js',
     output: {
-      file: 'assets/built/ghost-cards.css',
+      file:
+        process.env.NODE_ENV === 'production'
+          ? 'assets/built/ghost-cards.min.js'
+          : 'assets/built/ghost-cards.js',
       format: 'es',
     },
     plugins: postcssConfigGhost,
