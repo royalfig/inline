@@ -1,3 +1,5 @@
+/* eslint-disable camelcase */
+/* eslint-disable no-undef */
 import MiniSearch from 'minisearch';
 
 async function getPosts() {
@@ -14,6 +16,45 @@ async function getPosts() {
   } catch (e) {
     throw Error(e);
   }
+}
+
+async function cache() {
+  const timestamp = Number.parseInt(localStorage.getItem('timestamp'), 10);
+
+  const isOutdatd = Date.now() - new Date(timestamp) > 24 * 60 * 60 * 1000;
+
+  if (isOutdatd || !timestamp) {
+    const posts = await getPosts();
+    localStorage.setItem('timestamp', Date.now());
+    localStorage.setItem('posts', JSON.stringify(posts));
+    return posts;
+  }
+
+  return JSON.parse(localStorage.getItem('posts'));
+}
+
+function resultTemplate(results) {
+  return results
+    .map(
+      ({
+        title,
+        url,
+        primary_tag,
+        excerpt,
+        score,
+      }) => `<div class="i-search-result">
+      <div class="i-search-tags flex-row">
+        <p class="i-search-tag">${
+          primary_tag && primary_tag.name
+        }</p><span class="i-search-score" style="width: ${
+        (score / results[0].score) * 100
+      }%"></span>
+      </div>
+        <p><a href="${url}">${title}</a></p>
+        <p class="i-search-excerpt">${excerpt}</p>
+              </div>`,
+    )
+    .join('');
 }
 
 export default async function search() {
@@ -53,43 +94,4 @@ export default async function search() {
 
     resultsContainer.innerHTML = resultHtml;
   });
-}
-
-function resultTemplate(results) {
-  return results
-    .map(
-      ({
-        title,
-        url,
-        primary_tag,
-        excerpt,
-        score,
-      }) => `<div class="i-search-result">
-      <div class="i-search-tags flex-row">
-        <p class="i-search-tag">${
-          primary_tag && primary_tag.name
-        }</p><span class="i-search-score" style="width: ${
-        (score / results[0].score) * 100
-      }%"></span>
-      </div>
-        <p><a href="${url}">${title}</a></p>
-        <p class="i-search-excerpt">${excerpt}</p>
-              </div>`,
-    )
-    .join('');
-}
-
-async function cache() {
-  const timestamp = Number.parseInt(localStorage.getItem('timestamp'));
-
-  const isOutdatd = Date.now() - new Date(timestamp) > 24 * 60 * 60 * 1000;
-
-  if (isOutdatd || !timestamp) {
-    const posts = await getPosts();
-    localStorage.setItem('timestamp', Date.now());
-    localStorage.setItem('posts', JSON.stringify(posts));
-    return posts;
-  }
-
-  return JSON.parse(localStorage.getItem('posts'));
 }
