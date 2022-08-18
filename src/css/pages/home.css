@@ -16,10 +16,6 @@
 
 .home-template {
   padding-bottom: 1rem;
-}
-
-/* Make primary color lighter on home page */
-.home-template {
   --primary: hsl(var(--primary-h) var(--saturation) 70%);
   --secondary: hsl(var(--complementary-color) var(--saturation) 70%);
 }
