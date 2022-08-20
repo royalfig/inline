@@ -12,6 +12,7 @@ if (ENV === 'development') {
     (window.location.host || 'localhost').split(':')[0]
   }:35729/livereload.js?snipver=1`;
   document.head.append(script);
+  // eslint-disable-next-line
   console.info('Reload script added');
 }
 

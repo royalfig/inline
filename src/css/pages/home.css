@@ -152,7 +152,7 @@
 
 .i-dalle figcaption {
   font-size: small;
-  text-transform: uppercase;
-  text-align: center;
   font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
 }
