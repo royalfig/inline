@@ -196,9 +196,15 @@
             </form>
         </div>
     </section>
+    {{else}}
+    <section class="i-home-section i-cta">
+        <div class="i-cta-wrapper flex-column">
+            <h2 class="i-home-cards-title">Thank you for being a member</h2>
+        </div>
+    </section>
     {{/if}}
 
-    <section class="i-home-cards i-home-section i-home-cards-bg-2">
+    <section class="i-home-cards i-home-section">
             <h2 class="i-home-cards-title"><a href="/tag/academic/">For the Braniacs</a></h2>
         <div class="i-card-grid">
             {{#get "posts" include="tags" filter="tags:academic+featured:false" limit="6" as |sites| }}
