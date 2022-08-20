@@ -4,20 +4,20 @@
   justify-content: center;
   min-height: 100vh;
   min-height: 100dvh;
-  padding: 3rem 2rem;
+  padding: 8rem 2rem;
   margin-inline: auto;
   scroll-snap-align: center;
   --bg-primary-1: hsl(var(--primary-h), 50%, 10%);
-  --bg-primary-2: hsl(var(--primary-h), 50%, 10%);
-  --bg-secondary-1: hsl(var(--complementary-color), 50%, 10%);
-  --bg-secondary-2: hsl(var(--complementary-color), 50%, 10%);
-  --bg-tertiary-1: hsl(calc(var(--primary-h) + 300), 50%, 10%);
+  --bg-primary-2: hsl(calc(var(--primary-h) - 30), 50%, 10%);
+  --bg-secondary-1: hsl(var(--complementary-h), 50%, 10%);
+  --bg-secondary-2: hsl(calc(var(--complementary-h) - 30), 50%, 10%);
+  --bg-tertiary-1: hsl(calc(var(--primary-h) + 30), 50%, 10%);
 }
 
 .home-template {
   padding-bottom: 1rem;
   --primary: hsl(var(--primary-h) var(--saturation) 70%);
-  --secondary: hsl(var(--complementary-color) var(--saturation) 70%);
+  --secondary: hsl(var(--complementary-h) var(--saturation) 70%);
 }
 
 .home-template .i-nav-flex {
@@ -134,7 +134,8 @@
   text-transform: uppercase;
 }
 
-.i-home-cards-title a {
+.i-home-cards-title a,
+.i-dalle a {
   color: inherit;
   text-decoration: none;
 }
@@ -142,4 +143,16 @@
 .i-home-cards-title a:hover:after {
   content: '\0027A9';
   margin-inline-start: 0.5em;
+}
+
+/* Dalle */
+.i-dalle img {
+  max-width: 100%;
+}
+
+.i-dalle figcaption {
+  font-size: small;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 700;
 }

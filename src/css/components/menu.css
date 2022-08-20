@@ -79,7 +79,7 @@
 .i-mode-button:focus-visible {
   color: var(--element);
   background-color: hsla(
-    var(--complementary-color),
+    var(--complementary-h),
     var(--saturation),
     var(--lightness),
     0.25

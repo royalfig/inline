@@ -47,17 +47,17 @@
     ),
     radial-gradient(
       at 0% 50%,
-      hsla(var(--complementary-color), 100%, 93%, 1) 0,
+      hsla(var(--complementary-h), 100%, 93%, 1) 0,
       transparent 50%
     ),
     radial-gradient(
       at 80% 50%,
-      hsla(calc(var(--complementary-color) + 10), 100%, 76%, 1) 0,
+      hsla(calc(var(--complementary-h) + 10), 100%, 76%, 1) 0,
       transparent 50%
     ),
     radial-gradient(
       at 0% 100%,
-      hsla(calc(var(--complementary-color) - 10), 100%, 77%, 1) 0,
+      hsla(calc(var(--complementary-h) - 10), 100%, 77%, 1) 0,
       transparent 50%
     ),
     radial-gradient(

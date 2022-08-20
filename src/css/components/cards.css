@@ -1,19 +1,19 @@
 /* Shared */
 .i-card-grid {
-  grid-template-columns: minmax(10rem, 18.75rem);
+  grid-template-columns: minmax(10rem, 18rem);
   justify-content: center;
   gap: 2rem;
 }
 
 @media (--phone) {
   .i-card-grid {
-    grid-template-columns: repeat(2, minmax(10rem, 13rem));
+    grid-template-columns: repeat(2, minmax(10rem, 18rem));
   }
 }
 
 @media (--tablet) {
   .i-card-grid {
-    grid-template-columns: repeat(3, minmax(10rem, 12rem));
+    grid-template-columns: repeat(3, minmax(10rem, 18rem));
   }
 }
 
@@ -29,7 +29,7 @@
 .i-card-line-flex {
   align-items: center;
   gap: 0.5em;
-  font-size: var(--small);
+  font-size: var(--x-small);
 }
 
 .i-card-line-tag {
@@ -46,7 +46,7 @@
 }
 
 .i-card-line-title {
-  font-size: var(--h5);
+  font-size: var(--h4);
   font-weight: 700;
   line-height: 1.2;
   color: var(--white);
@@ -117,7 +117,7 @@
   position: relative;
   z-index: 1;
   margin: 0;
-  font-size: 1rem;
+  font-size: var(--h4);
   font-size: 1.1rem;
   color: var(--white);
   text-transform: uppercase;

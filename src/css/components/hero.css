@@ -40,7 +40,7 @@
   margin: 1.5rem;
   background: linear-gradient(
       to bottom,
-      hsl(var(--complementary-color), 70%, 80%),
+      hsl(var(--complementary-h), 70%, 80%),
       transparent
     ),
     url('/assets/images/noise.svg');
@@ -76,8 +76,8 @@
   content: '';
   background: linear-gradient(
       to bottom,
-      hsl(var(--complementary-color) 70% 80%),
-      hsl(var(--complementary-color) 70% 80% / 80%)
+      hsl(var(--complementary-h) 70% 80%),
+      hsl(var(--complementary-h) 70% 80% / 80%)
     ),
     url('/assets/images/noise.svg');
   box-shadow: 2px 2px 15px rgb(0 0 0 / 0.25);

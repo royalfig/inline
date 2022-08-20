@@ -3,9 +3,9 @@
   --primary: hsl(var(--primary-h) var(--saturation) 50%);
   --primary-light: hsl(var(--primary-h) var(--saturation) 60%);
   --primary-dark: hsl(var(--primary-h) var(--saturation) 40%);
-  --secondary: hsl(var(--complementary-color) var(--saturation) 50%);
-  --secondary-light: hsl(var(--complementary-color) var(--saturation) 60%);
-  --secondary-dark: hsl(var(--complementary-color) var(--saturation) 40%);
+  --secondary: hsl(var(--complementary-h) var(--saturation) 50%);
+  --secondary-light: hsl(var(--complementary-h) var(--saturation) 60%);
+  --secondary-dark: hsl(var(--complementary-h) var(--saturation) 40%);
 
   --surface: hsl(var(--primary-h) 5% 98%);
   --surface-85: hsla(var(--primary-h) 5% 98% / 0.85);
@@ -36,9 +36,9 @@
   --primary-light: hsl(var(--primary-h) var(--saturation) 80%);
   --primary-dark: hsl(var(--primary-h) var(--saturation) 60%);
 
-  --secondary: hsl(var(--complementary-color) var(--saturation) 70%);
-  --secondary-light: hsl(var(--complementary-color) var(--saturation) 80%);
-  --secondary-dark: hsl(var(--complementary-color) var(--saturation) 60%);
+  --secondary: hsl(var(--complementary-h) var(--saturation) 70%);
+  --secondary-light: hsl(var(--complementary-h) var(--saturation) 80%);
+  --secondary-dark: hsl(var(--complementary-h) var(--saturation) 60%);
 
   --element: hsl(var(--primary-h) 10% 96%);
   --element-light: hsl(var(--primary-h) 10% 100%);
