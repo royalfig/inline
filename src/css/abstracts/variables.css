@@ -42,32 +42,32 @@
     ),
     radial-gradient(
       at 80% 0%,
-      hsla(var(--complementary-h), 100%, 56%, 1) 0,
+      hsla(calc(var(--primary-h) - 10), 100%, 56%, 1) 0,
       transparent 50%
     ),
     radial-gradient(
       at 0% 50%,
-      hsla(calc(var(--primary-h) - 30), 100%, 93%, 1) 0,
+      hsla(var(--complementary-h), 100%, 93%, 1) 0,
       transparent 50%
     ),
     radial-gradient(
       at 80% 50%,
-      hsla(calc(var(--complementary-h) - 60), 100%, 76%, 1) 0,
+      hsla(calc(var(--complementary-h) + 10), 100%, 76%, 1) 0,
       transparent 50%
     ),
     radial-gradient(
       at 0% 100%,
-      hsla(calc(var(--primary-h) + 60), 100%, 77%, 1) 0,
+      hsla(calc(var(--complementary-h) - 10), 100%, 77%, 1) 0,
       transparent 50%
     ),
     radial-gradient(
       at 80% 100%,
-      hsla(calc(var(--complementary-h) + 30), 100%, 70%, 1) 0,
+      hsla(calc(var(--primary-h) - 20), 100%, 70%, 1) 0,
       transparent 50%
     ),
     radial-gradient(
       at 0% 0%,
-      hsla(calc(var(--primary-h) - 60), 100%, 76%, 1) 0,
+      hsla(calc(var(--primary-h) - 10), 100%, 76%, 1) 0,
       transparent 50%
     );
 }
