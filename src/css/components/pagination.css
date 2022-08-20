@@ -11,7 +11,7 @@
   margin-inline: auto;
 }
 
-.i-pagination a {
+.i-pagination a:not(.i-current) {
   color: var(--white);
   text-decoration: none;
 }
@@ -30,7 +30,8 @@
   fill: currentcolor;
 }
 
-a.i-current {
+.i-current {
   color: var(--primary);
+  text-decoration: none;
   background-color: var(--white);
 }

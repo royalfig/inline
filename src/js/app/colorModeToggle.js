@@ -1,4 +1,4 @@
-export function determineColorModeSupport() {
+export default function determineColorModeSupport() {
   const colorPrefButtons = document.querySelectorAll('.i-mode-button');
 
   const hasSupport = window.CSS && CSS.supports('color', 'var(--primary)');

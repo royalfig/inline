@@ -3,8 +3,9 @@
 
 {{#post}}
 
-<header class="i-post-header">
+<header class="i-post-header {{#unless feature_image}}i-no-post-header-image{{/unless}}">
 
+{{#if feature_image}}
     <picture class="i-post-header-img">
         <source 
             srcset="{{img_url feature_image size="m" format="avif"}} 500w,
@@ -24,6 +25,7 @@
         >
         <img class="i-hero-img" src="{{img_url feature_image size="xxl"}}" alt="{{feature_image_alt}}" width="1920" height="1080">
     </picture>
+{{/if}}
     
     <div class="i-post-header-grid">
         
@@ -61,14 +63,16 @@
             </div>
         </div>
         {{/is}}
+        {{#if feature_image_caption}}
         <div class="i-post-header-caption flex-row">
             <button class="i-post-header-caption-button">
                 <svg viewBox='0 0 24 24' fill='currentColor' aria-hidden='true'><path fill="none" d="M0 0h24v24H0z"/><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zM11 7h2v2h-2V7zm0 4h2v6h-2v-6z"/></svg>
             </button>
-            <p class="i-post-header-caption-text">
-                {{feature_image_caption}}
-            </p>
+                <p class="i-post-header-caption-text">
+                    {{feature_image_caption}}
+                </p>
         </div>
+        {{/if}}
     </div>
 
 </header>

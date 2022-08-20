@@ -1,3 +1,10 @@
+export function launchSearch() {
+  const searchEl = document.querySelector('.i-search');
+  searchEl.classList.toggle('i-show');
+  searchEl.querySelector('input').focus();
+  document.body.classList.toggle('no-scroll');
+}
+
 export default function clickHandler(e) {
   const { target } = e;
 
@@ -40,11 +47,4 @@ export default function clickHandler(e) {
     document.documentElement.dataset.colorPref = pref;
     localStorage.setItem('pref', pref);
   }
-}
-
-export function launchSearch() {
-  const searchEl = document.querySelector('.i-search');
-  searchEl.classList.toggle('i-show');
-  searchEl.querySelector('input').focus();
-  document.body.classList.toggle('no-scroll');
 }

@@ -148,6 +148,7 @@
 /* Dalle */
 .i-dalle img {
   max-width: 100%;
+  height: auto;
 }
 
 .i-dalle figcaption {
