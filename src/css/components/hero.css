@@ -137,7 +137,7 @@
   }
 
   .i-hero .i-card-grid {
-    margin-inline-start: var(--inline);
+    margin-inline: var(--inline);
     padding: 0;
   }
 
