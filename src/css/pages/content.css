@@ -63,3 +63,9 @@
   font-size: var(--x-small);
   color: #ebff87;
 }
+
+/* To ensure zoomed images sit atop other content */
+.medium-zoom-overlay,
+.medium-zoom-image--opened {
+  z-index: 2;
+}
