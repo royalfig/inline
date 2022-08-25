@@ -1,8 +1,9 @@
 /* Header */
 .i-post-header {
-  position: relative;
-  height: 95vh;
   --inline: 8vw;
+  position: relative;
+  height: 100vh;
+  height: 100dvh;
 }
 
 .i-no-post-header-image {
@@ -38,7 +39,7 @@
   justify-content: center;
   height: 100%;
   padding: 1rem;
-  grid-template: auto 1fr 1fr / 1fr 1fr;
+  grid-template: auto auto auto / 1fr 1fr;
 }
 
 .i-no-post-header-image .i-post-header-grid {
@@ -62,7 +63,6 @@
 
 .i-post-header-text {
   grid-column: 1 / span 2;
-  align-self: flex-end;
   margin-block-start: 1rem;
 }
 
