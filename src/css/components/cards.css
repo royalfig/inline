@@ -1,8 +1,8 @@
 /* Shared */
 .i-card-grid {
   grid-template-columns: minmax(10rem, 20rem);
-  justify-content: center;
   gap: 2rem;
+  justify-content: center;
 }
 
 @media (--phone) {
@@ -20,15 +20,15 @@
 /* Line card */
 .i-card-line {
   position: relative;
-  border-top: 1px solid var(--primary);
-  border-bottom: 1px solid var(--primary);
   padding-block: 1rem;
   margin-block-end: 1rem;
+  border-top: 1px solid var(--primary);
+  border-bottom: 1px solid var(--primary);
 }
 
 .i-card-line-flex {
-  align-items: center;
   gap: 0.5em;
+  align-items: center;
   font-size: var(--x-small);
 }
 
@@ -46,11 +46,11 @@
 }
 
 .i-card-line-title {
+  margin-block: 1rem 3rem;
   font-size: var(--h4);
   font-weight: 700;
   line-height: 1.2;
   color: var(--white);
-  margin-block: 1rem 3rem;
 }
 
 .i-card-line-title a {
@@ -83,9 +83,9 @@
   flex: 0;
   align-items: center;
   width: 100%;
+  aspect-ratio: 3 / 4;
   padding: 1rem;
   text-decoration: none;
-  aspect-ratio: 3 / 4;
 }
 
 .i-picture-card-link-flex::after {

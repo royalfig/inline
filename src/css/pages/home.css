@@ -141,8 +141,8 @@
 }
 
 .i-home-cards-title a:hover:after {
-  content: '\0027A9';
   margin-inline-start: 0.5em;
+  content: '\0027A9';
 }
 
 /* Dalle */

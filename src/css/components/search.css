@@ -6,9 +6,9 @@
   display: none;
   width: 100%;
   height: 100vh;
+  padding-block-end: 3rem;
   overflow-y: auto;
   background-color: var(--surface);
-  padding-block-end: 3rem;
 }
 
 .i-search.i-show {
@@ -44,8 +44,8 @@
 }
 
 .i-search-results {
-  margin-block-start: 3rem;
   padding: 0 3.5rem;
+  margin-block-start: 3rem;
   color: var(--element);
 }
 

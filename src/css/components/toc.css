@@ -23,31 +23,31 @@ summary:hover {
 }
 
 .i-toc-h2::before {
+  margin-inline-end: 0.5em;
   color: inherit;
   content: '\002015';
-  margin-inline-end: 0.5em;
 }
 
 .i-toc-h3::before {
+  margin-inline-end: 0.5em;
   color: inherit;
   content: '\002015\002015';
-  margin-inline-end: 0.5em;
 }
 
 .i-toc-h4::before {
+  margin-inline-end: 0.5em;
   color: inherit;
   content: '\002015\002015\002015';
-  margin-inline-end: 0.5em;
 }
 
 .i-toc-h5::before {
+  margin-inline-end: 0.5em;
   color: inherit;
   content: '\002015\002015\002015\002015';
-  margin-inline-end: 0.5em;
 }
 
 .i-toc-h6::before {
+  margin-inline-end: 0.5em;
   color: inherit;
   content: '\002015\002015\002015\002015\002015';
-  margin-inline-end: 0.5em;
 }

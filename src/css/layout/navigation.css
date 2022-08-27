@@ -12,11 +12,11 @@
 .i-nav-center h1,
 .i-nav-center p,
 .i-nav-center a {
+  margin-block-end: 0;
   font-size: var(--h5);
   font-weight: 700;
   color: var(--white);
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: var(--letter-spacing);
-  margin-block-end: 0;
 }

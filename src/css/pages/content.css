@@ -20,8 +20,8 @@
 
 .post table {
   width: 100%;
-  border-collapse: collapse;
   margin-block: 3rem;
+  border-collapse: collapse;
 }
 
 .post tbody tr {

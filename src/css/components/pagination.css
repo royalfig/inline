@@ -2,13 +2,13 @@
   align-items: center;
   justify-content: center;
   padding: 3rem 1rem;
+  margin-inline: auto;
   font-family: var(--heading-typeface);
   font-size: var(--small);
   font-weight: 700;
   line-height: 1;
   text-transform: uppercase;
   letter-spacing: var(--letter-spacing);
-  margin-inline: auto;
 }
 
 .i-pagination a:not(.i-current) {
@@ -18,10 +18,10 @@
 
 .i-number {
   padding: 0.25em;
-  text-align: center;
-  border: 1px solid;
 
   font-variant-numeric: tabular-nums;
+  text-align: center;
+  border: 1px solid;
 }
 
 .i-pagination svg {

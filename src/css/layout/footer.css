@@ -1,16 +1,16 @@
 /* Add footer styles here */
 .i-footer {
-    margin-block: auto;
     padding: 2rem 1rem 0;
+    margin-block: auto;
 }
 
 .i-footer .nav {
     display: flex;
+    gap: 1rem;
     justify-content: center;
     font-size: var(--x-small);
     text-transform: uppercase;
     list-style-type: none;
-    gap: 1rem;
 }
 
 .i-footer a {

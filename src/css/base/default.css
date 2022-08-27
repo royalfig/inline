@@ -2,59 +2,59 @@
   font-family: Archivo;
   font-style: normal;
   font-weight: 800;
-  font-display: swap;
   src: local(''),
     url('/assets/fonts/archivo-v18-latin-800.woff2') format('woff2'),
     url('/assets/fonts/archivo-v18-latin-800.woff') format('woff');
+  font-display: swap;
 }
 
 @font-face {
   font-family: Archivo;
   font-style: italic;
   font-weight: 800;
-  font-display: swap;
   src: local(''),
     url('/assets/fonts/archivo-v18-latin-800italic.woff2') format('woff2'),
     url('/assets/fonts/archivo-v18-latin-800italic.woff') format('woff');
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Libre Franklin';
   font-style: normal;
-  font-display: swap;
   src: local(''),
     url('/assets/fonts/libre-franklin-v13-latin-regular.woff2') format('woff2'),
     url('/assets/fonts/libre-franklin-v13-latin-regular.woff') format('woff');
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Libre Franklin';
   font-style: italic;
-  font-display: swap;
   src: local(''),
     url('/assets/fonts/libre-franklin-v13-latin-italic.woff2') format('woff2'),
     url('/assets/fonts/libre-franklin-v13-latin-italic.woff') format('woff');
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Libre Franklin';
   font-style: normal;
   font-weight: 700;
-  font-display: swap;
   src: local(''),
     url('/assets/fonts/libre-franklin-v13-latin-700.woff2') format('woff2'),
     url('/assets/fonts/libre-franklin-v13-latin-700.woff') format('woff');
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Libre Franklin';
   font-style: italic;
   font-weight: 700;
-  font-display: swap;
   src: local(''),
     url('/assets/fonts/libre-franklin-v13-latin-700italic.woff2')
       format('woff2'),
     url('/assets/fonts/libre-franklin-v13-latin-700italic.woff') format('woff');
+  font-display: swap;
 }
 
 html {

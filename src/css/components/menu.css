@@ -58,6 +58,7 @@
 
 .i-mode-button {
   padding: var(--button-padding);
+  margin-block: var(--gap);
   font-weight: 700;
   color: var(--element);
   color: hsl(var(--primary-h), var(--saturation), 10%);
@@ -68,7 +69,6 @@
     var(--lightness),
     0.25
   );
-  margin-block: var(--gap);
 }
 
 [data-color-pref='dark'] .i-mode-button {

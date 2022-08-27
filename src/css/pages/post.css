@@ -35,12 +35,12 @@
 }
 
 .i-post-header-grid {
+  grid-template: auto auto auto / 1fr 1fr;
   align-items: center;
   justify-content: center;
   height: 100%;
   min-height: inherit;
   padding: 1rem;
-  grid-template: auto auto auto / 1fr 1fr;
 }
 
 .i-no-post-header-image .i-post-header-grid {
@@ -58,8 +58,10 @@
 .i-post-header-grid .i-nav-flex {
   position: relative;
   z-index: 1;
-  align-self: start;
   grid-column: 1 / span 2;
+  align-self: start;
+  margin-block-end: 2rem;
+  opacity: 0.8;
 }
 
 .i-post-header-text {
@@ -69,9 +71,9 @@
 
 .i-no-post-header-image .i-post-header-text {
   align-self: center;
-  margin-block: 6rem;
   max-width: 100%;
   padding-inline: var(--inline);
+  margin-block: 6rem;
   text-align: center;
 }
 
@@ -89,9 +91,9 @@
 }
 
 .i-post-header-meta {
-  text-align: right;
-  grid-column: 2 / -1;
   grid-row: 3;
+  grid-column: 2 / -1;
+  text-align: right;
 }
 
 .i-post-header-meta-author {
@@ -105,9 +107,9 @@
 }
 
 .i-post-header-meta-date {
+  margin-block-start: 0;
   font-size: var(--small);
   text-transform: uppercase;
-  margin-block-start: 0;
   opacity: 0.75;
 }
 
@@ -142,14 +144,14 @@
 .i-post-header-caption {
   position: relative;
   z-index: 1;
+  grid-row: 3;
+  gap: 0.5em;
   align-self: end;
+  margin-block-end: 1rem;
   font-size: var(--x-small);
   color: var(--white);
   text-transform: uppercase;
   opacity: 0.5;
-  grid-row: 3;
-  margin-block-end: 1rem;
-  gap: 0.5em;
 }
 
 @media (--tablet) {
@@ -197,9 +199,9 @@
 
 /* Post body */
 .i-post-container {
+  padding-block-start: 3rem;
   color: var(--element);
   background-color: var(--surface);
-  padding-block-start: 3rem;
 }
 
 .i-post-container-grid {
