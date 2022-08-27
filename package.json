@@ -1,6 +1,6 @@
 {
   "name": "inline",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "A Ghost theme",
   "engines": {
     "ghost": ">=5.0.0"
