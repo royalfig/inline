@@ -4,8 +4,7 @@
   position: relative;
   min-height: calc(100vh - 3.6rem);
   min-height: calc(100dvh - 3.6rem);
-  padding: 0;
-  padding-block: 3rem;
+  padding: 8rem 0;
   overflow: hidden;
   background-color: var(--bg-primary-1);
   margin-block-start: 0;
@@ -14,7 +13,6 @@
 @media (--laptop) {
   .i-hero {
     margin-block-start: 1rem;
-    padding-block: 4rem;
   }
 
   .i-hero-grid-flex {
