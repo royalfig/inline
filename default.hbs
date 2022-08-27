@@ -4,7 +4,6 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{{meta_title}}</title>
-        {{!-- <link rel="preconnect" href="https://unpkg.com/"> --}}
 
         {{! Load scripts to execute before render }}
         <script>
@@ -100,13 +99,11 @@
         <script src="{{asset 'built/post.js' hasMinFile='true'}}" defer></script>
         <link rel="stylesheet" href="{{asset 'built/syntax-highlighting.css' hasMinFile='true'}}">
         <script src="{{asset 'built/syntax-highlighting.js' hasMinFile='true'}}" defer></script>
-        
         {{/is}}
- 
 
         {{!-- contentFor/block scripts - use with defer --}}
         {{{block "scripts"}}}
-        
+
         {{!-- Outputs important meta data and settings, should always be in <head> --}}
         {{ghost_head}}
 
@@ -114,13 +111,9 @@
     </head>
 
     <body class="{{body_class}}">
-            
-
-
 
         {{{body}}}
-        
-        
+
         {{> "menu"}}
 
         {{!-- Outputs important scripts - should always be included before closing body tag --}}

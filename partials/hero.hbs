@@ -6,10 +6,9 @@
         <div class="i-hero-grid">
             <div class="i-hero-text">
                 <p>Hello, I'm Ryan.</p>
-                <p>I'm a Developer Experience Engineer at the open source, publishing platform <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a></p>
-                <p>I love building websites and apps with <span class="i-js">JavaScript</span> and sharing what I learn ❤️</p
-                >
-                <p><a href="#/portal/subscribe">Subscribe to my newsletter</a> for some fun, essential tutorials on web dev &amp; design or just check out some of my favorite articles 👇</p>
+                <p>I'm a Developer Experience Engineer at the open source, publishing platform <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a> 👻</p>
+                <p>I love building websites and apps with JavaScript, CSS, and HTML&mdash;and sharing what I learn ❤️</p>
+                <p><a href="#/portal/subscribe">Subscribe to my newsletter</a> for some fun, essential tutorials on web dev &amp; design or just check out some of my favorites below 👇</p>
             </div>
             <div class="i-hero-img-wrapper">
                 <picture class="i-hero-img">
@@ -29,7 +28,7 @@
                                 sizes="(max-width: 992px) 100vw, (max-width: 1600px) 1000px, (max-width: 2200px) 2000px, 2000px"
                         type="image/webp"
                     >
-                    <img class="i-hero-img" src="{{img_url @site.cover_image size="xxl"}}" alt="{{#if cover_image_caption}}{{cover_image_caption}}{{/if}}" width="1920" height="1080" />
+                    <img class="i-hero-img" src="{{img_url @site.cover_image size="xxl"}}" alt="{{#if cover_image_caption}}{{cover_image_caption}}{{/if}}" width="1920" height="1080" loading="lazy" />
                 </picture>
             </div>
         </div>
