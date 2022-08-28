@@ -2,7 +2,7 @@
 
 /* To create your secondary color, add 30, 120, 150, 180, 210, 240, or 300 to the H value of your primary color. For this example, I added 30. */
 
-.kg-card.kg-code-card {
+.post pre {
   position: relative;
   font-size: var(--small);
 }
@@ -18,15 +18,15 @@
   background-color: hsla(var(--primary-h), var(--saturation), 10%, 0.5);
 }
 
-.kg-code-card code::-webkit-scrollbar {
+pre > code::-webkit-scrollbar {
   width: 1em;
 }
 
-.kg-code-card code::-webkit-scrollbar-track {
+pre > code::-webkit-scrollbar-track {
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }
 
-.kg-code-card code::-webkit-scrollbar-thumb {
+pre > code::-webkit-scrollbar-thumb {
   background-color: hsl(236, 15%, 10%);
   outline: hsl(236, 15%, 12%);
 }

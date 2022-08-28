@@ -106,8 +106,10 @@
 
         {{!-- Outputs important meta data and settings, should always be in <head> --}}
         {{ghost_head}}
-
+        
+        {{#is "post,page"}}
         <link rel="stylesheet" href="{{asset '/built/ghost-cards.css' hasMinFile='true'}}">
+        {{/is}}
     </head>
 
     <body class="{{body_class}}">

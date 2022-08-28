@@ -9,6 +9,7 @@
   display: block;
   max-width: 100%;
   height: auto;
+  margin-inline: auto;
 }
 
 /* By using CSS grid, you can have an elegant solution to accomodate wide/full image cards and other embeds */
