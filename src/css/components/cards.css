@@ -97,6 +97,7 @@
   content: '';
   /* background: rgba(0 0 0 / 0.5); */
   mix-blend-mode: color;
+  backdrop-filter: brightness(0.5);
 }
 
 .i-picture-card-link-flex img {
