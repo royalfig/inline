@@ -39,19 +39,23 @@
   }
 }
 
-.i-home-section:nth-of-type(2) {
+.i-home-section:nth-of-type(2),
+.i-home-section:nth-of-type(2) .i-picture-card-link-flex::after {
   background-color: var(--bg-secondary-1);
 }
 
-.i-home-section:nth-of-type(3) {
+.i-home-section:nth-of-type(3),
+.i-home-section:nth-of-type(3) .i-picture-card-link-flex::after {
   background-color: var(--bg-tertiary-1);
 }
 
-.i-home-section:nth-of-type(5) {
+.i-home-section:nth-of-type(5),
+.i-home-section:nth-of-type(5) .i-picture-card-link-flex::after {
   background-color: var(--bg-primary-2);
 }
 
-.i-home-section:nth-of-type(7) {
+.i-home-section:nth-of-type(7),
+.i-home-section:nth-of-type(7) .i-picture-card-link-flex::after {
   background-color: var(--bg-secondary-2);
 }
 

@@ -95,7 +95,12 @@
   bottom: 0;
   left: 0;
   content: '';
-  background: rgba(0 0 0 / 0.5);
+  /* background: rgba(0 0 0 / 0.5); */
+  mix-blend-mode: color;
+}
+
+.i-picture-card-link-flex img {
+  transition: transform 0.25s;
 }
 
 .i-picture-card-link-flex:hover img,
