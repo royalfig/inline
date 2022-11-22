@@ -98,7 +98,7 @@
   /* background: rgba(0 0 0 / 0.5); */
   mix-blend-mode: color;
 }
-
+/* 
 @supports (backdrop-filter: brightness(50%)) {
   .i-picture-card-link-flex::after {
     backdrop-filter: brightness(50%);
@@ -112,7 +112,7 @@
 .i-picture-card-link-flex:hover img,
 .i-picture-card-link-flex:focus img {
   transform: scale(1.5) rotate(15deg);
-}
+} */
 
 .i-picture-card picture,
 .i-picture-card img {
