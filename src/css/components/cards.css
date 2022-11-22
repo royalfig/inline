@@ -99,9 +99,9 @@
   mix-blend-mode: color;
 }
 
-@supports (backdrop-filter: brightness(0.5)) {
+@supports (backdrop-filter: brightness(50%)) {
   .i-picture-card-link-flex::after {
-    backdrop-filter: brightness(0.5);
+    backdrop-filter: brightness(50%);
   }
 }
 
