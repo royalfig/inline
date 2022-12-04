@@ -68,6 +68,7 @@
     "@rollup/plugin-commonjs": "23.0.3",
     "@rollup/plugin-node-resolve": "15.0.1",
     "@rollup/plugin-replace": "5.0.1",
+    "@rollup/plugin-terser": "^0.1.0",
     "adm-zip": "0.5.9",
     "cssnano": "5.1.14",
     "eslint": "8.29.0",
@@ -81,15 +82,14 @@
     "rollup": "3.5.1",
     "rollup-plugin-postcss": "4.0.2",
     "rollup-plugin-replace": "2.2.0",
-    "rollup-plugin-terser": "7.0.2",
     "stylelint": "14.16.0",
     "stylelint-config-recess-order": "3.0.0",
     "stylelint-order": "5.0.0"
   },
   "dependencies": {
-    "highlight.js": "^11.6.0",
+    "highlight.js": "^11.7.0",
     "medium-zoom": "^1.0.8",
-    "minisearch": "^5.1.0"
+    "minisearch": "^6.0.0"
   },
   "type": "module"
 }
