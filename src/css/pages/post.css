@@ -6,6 +6,10 @@
   min-height: 100dvh;
 }
 
+.page-template .i-post-header {
+  min-height: auto;
+}
+
 .i-no-post-header-image {
   height: auto;
 }

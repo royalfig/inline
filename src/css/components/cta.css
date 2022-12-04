@@ -67,7 +67,7 @@
 
 /* form states */
 
-.i-cta input {
+.i-cta :where(input, textarea) {
   width: 100%;
   padding: 0.5em 0.5em 0.5em 2em;
   font-family: inherit;
@@ -78,7 +78,7 @@
   border: 3px solid var(--secondary);
 }
 
-.i-cta input:focus-visible,
+.i-cta :where(input, textarea):focus-visible,
 .i-cta:hover {
   border-color: var(--primary);
   outline: none;
