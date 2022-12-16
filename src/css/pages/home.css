@@ -24,6 +24,11 @@
   padding: 1rem;
 }
 
+.home-template main {
+	max-width: 1920px;
+	margin-inline: auto;
+}
+
 @media (--laptop) {
   .home-template .i-nav-flex {
     padding: 0;

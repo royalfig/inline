@@ -1,10 +1,17 @@
 import { resolve } from 'path';
 
 import { nodeResolve } from '@rollup/plugin-node-resolve';
+
 import commonjs from '@rollup/plugin-commonjs';
 import babel from '@rollup/plugin-babel';
 import terser from '@rollup/plugin-terser';
 import replace from '@rollup/plugin-replace';
+
+
+//Temp fix for _filename terser issue | https://github.com/rollup/plugins/issues/1366
+import { fileURLToPath } from 'url';
+const __filename = fileURLToPath(import.meta.url);
+global['__filename'] = __filename;
 
 // CSS
 import postcss from 'rollup-plugin-postcss';
@@ -91,7 +98,6 @@ export default [
           ? 'assets/built/app.min.js'
           : 'assets/built/app.js',
       format: 'iife',
-      sourcemap: true,
     },
     plugins: [...plugins, postcssConfig],
   },
@@ -103,7 +109,6 @@ export default [
           ? 'assets/built/post.min.js'
           : 'assets/built/post.js',
       format: 'iife',
-      sourcemap: true,
     },
     plugins,
   },
@@ -115,7 +120,6 @@ export default [
           ? 'assets/built/syntax-highlighting.min.js'
           : 'assets/built/syntax-highlighting.js',
       format: 'iife',
-      sourcemap: true,
     },
     plugins: [...plugins, postcssConfigSyntax],
   },

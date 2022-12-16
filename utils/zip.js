@@ -1,7 +1,7 @@
 /* 
 Use this script to create a zip file of your theme. Add or remove files you want to include.
 */
-const AdmZip = require('adm-zip');
+import AdmZip from 'adm-zip';
 
 const zip = new AdmZip();
 
