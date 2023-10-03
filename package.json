@@ -74,7 +74,7 @@
     "eslint": "8.50.0",
     "eslint-config-airbnb-base": "15.0.0",
     "eslint-plugin-import": "2.28.1",
-    "gscan": "4.39.3",
+    "gscan": "4.39.4",
     "livereload": "0.9.3",
     "postcss": "8.4.31",
     "postcss-import": "15.1.0",
