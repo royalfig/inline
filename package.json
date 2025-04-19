@@ -76,7 +76,7 @@
     "eslint-plugin-import": "2.31.0",
     "gscan": "4.48.0",
     "livereload": "0.9.3",
-    "postcss": "8.4.49",
+    "postcss": "8.5.3",
     "postcss-import": "15.1.0",
     "postcss-preset-env": "7.8.3",
     "rollup": "3.29.5",
